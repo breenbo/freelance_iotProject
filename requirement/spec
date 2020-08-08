@@ -1,0 +1,11 @@
+The project I am working on is a tool for helping IoT device creators manage their over-the-air (OTA) firmware updates. Once a creator has delivered a hardware product to a customer it is likely to require firmware updates. A common method of deploying these updates is via a wireless protocol such as WiFi or Bluetooth. Creators need a place to manage these firmware updates and decide how and when to deploy them. This can include things like ringed-deployment and targeting certain custom firmware to specific device groups. Additionally, it is helpful to know how many devices are running a specific version of firmware as well as some information about those devices.
+
+The central purpose of this service is to provide an easy and intuitive way to upload firmware binaries and schedule them for deployment to devices. The image I want to convey is a strong technical look that is mature and trustworthy but also has a bit of a maker-friendly vibe.
+
+For right now local dummy data or mockups should be used to simulate data. No live API calls are needed.
+
+I would prefer Typescript be used but this is not a hard requirement. If you’re more comfortable with vanilla JS then please use that.
+
+The deliverable will be an SPA build package (simple quasar build) of your work that I can open and navigate.
+
+Attached are the specs. Please let me know if you have any questions.
