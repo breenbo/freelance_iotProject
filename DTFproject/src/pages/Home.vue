@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-mt-xl">
+  <q-page class="q-mt-lg">
     <div class="row items-center q-gutter-lg">
       <div class="col-7 q-my-lg">
         <iotSVG />
