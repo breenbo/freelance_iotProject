@@ -47,9 +47,9 @@ const state: ProductStateInterface = {
       url: 'https://test.com/ota/88wxc4',
       id: 'HAL_ID',
       lastChecked: {
-        lastDay: 1,
-        lastWeek: 9,
-        lastMonth: 9
+        lastDay: 1500,
+        lastWeek: 900,
+        lastMonth: 900
       }
     }
   ]

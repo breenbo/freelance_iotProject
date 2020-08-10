@@ -3,7 +3,6 @@
     <q-card-section>
       <div class="text-h6 text-grey-7">Checked devices</div>
     </q-card-section>
-    <!-- <q-separator inset /> -->
     <q-card-section>
       <div class="chartContainer">
         <barChart :chart-data="dataChecked" :options="options" />
@@ -24,7 +23,21 @@ export default class TimeCard extends Vue {
   options = {
     responsive: true,
     maintainAspectRatio: false,
-    legend: { display: false }
+    legend: { display: false },
+    scales: {
+      xAxes: [
+        {
+          ticks: {
+            beginAtZero: true,
+            callback: function(value) {
+              // check if value is integer, and display only integer values
+              const newValue = Number.isInteger(value) ? value : '';
+              return newValue.toLocaleString('us');
+            }
+          }
+        }
+      ]
+    }
   };
 
   // get the datas from the store, depending on the chosenProduct

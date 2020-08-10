@@ -1,5 +1,6 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
+// import mixins for responsive behaviour on data changes
 import { HorizontalBar, mixins } from 'vue-chartjs';
 const { reactiveProp } = mixins;
 

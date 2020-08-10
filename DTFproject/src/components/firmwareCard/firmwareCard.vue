@@ -1,9 +1,5 @@
 <template>
-  <q-card
-    class="col firmwareCard"
-    flat
-    bordered
-  >
+  <q-card class="col firmwareCard" flat bordered>
     <q-card-section>
       <div class="row text-h4 text-grey-7">
         <div class="col">
@@ -24,32 +20,17 @@
       </div>
     </q-card-section>
     <q-card-section>
-      <!-- <versionList /> -->
-      <!-- <versionTree /> -->
       <versionTable />
     </q-card-section>
-    <!-- <q-card-section class="text-h4 text-grey-7 q-pl-lg q-mb-lg">
-      {{ numberBinary }} <span class="text-h5 text-grey-6">binar<span v-if="numberBinary === 1">y</span><span v-else>ies</span> uploaded</span>
-    </q-card-section> -->
     <q-separator inset />
-    <q-card-actions
-      align="center"
-      class="col-auto"
-    >
-      <q-btn
-        class="full-width"
-        flat
-        label="Manage firmwares"
-        to="/firmwares"
-      />
+    <q-card-actions align="center" class="col-auto">
+      <q-btn class="full-width" flat label="Manage firmwares" to="/firmwares" />
     </q-card-actions>
   </q-card>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-// import versionList from './versionList.vue';
-// import versionTree from './versionTree.vue';
 import versionTable from './versionTable.vue';
 
 @Component({
@@ -57,8 +38,8 @@ import versionTable from './versionTable.vue';
   filters: {
     niceNumber(value: number): string {
       return value.toLocaleString('us');
-    },
-  },
+    }
+  }
 })
 export default class Home extends Vue {
   // computed datas from store

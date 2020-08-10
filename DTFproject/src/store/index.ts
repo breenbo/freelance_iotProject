@@ -1,12 +1,12 @@
 import { store } from 'quasar/wrappers';
 import Vuex from 'vuex';
 
-// import example from './module-example';
-// import { ExampleStateInterface } from './module-example/state';
 import Products from './products';
 import Firmwares from './firmwares';
+import Devices from './Devices';
 import { ProductStateInterface } from './products/state';
 import { FirmwareStateInterface } from './firmwares/state';
+import { DevicesStateInterface } from './Devices/state';
 
 /*
  * If not building with SSR mode, you can
@@ -15,11 +15,9 @@ import { FirmwareStateInterface } from './firmwares/state';
 
 export interface StateInterface {
   // Define your own store structure, using submodules if needed
-  // example: ExampleStateInterface;
   Products: ProductStateInterface;
   Firmwares: FirmwareStateInterface;
-  // Declared as unknown to avoid linting issue. Best to strongly type as per the line above.
-  // example: unknown;
+  Devices: DevicesStateInterface;
 }
 
 export default store(function({ Vue }) {
@@ -28,7 +26,8 @@ export default store(function({ Vue }) {
   const Store = new Vuex.Store<StateInterface>({
     modules: {
       Products,
-      Firmwares
+      Firmwares,
+      Devices
     },
 
     // enable strict mode (adds overhead!)

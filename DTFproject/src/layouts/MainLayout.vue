@@ -13,7 +13,7 @@
 
         <q-space />
         <q-btn-dropdown
-          :label="chosenProduct.name ? chosenProduct.name:  'Choose a product'"
+          :label="chosenProduct.name ? chosenProduct.name : 'Choose a product'"
           flat
           no-caps
           size="xl"
@@ -28,31 +28,14 @@
               @click="setChosenProduct(product)"
             >
               <q-item-section>
-                <q-item-label class="text-h5 text-grey-7">{{ product.name }}</q-item-label>
+                <q-item-label class="text-h5 text-grey-7">{{
+                  product.name
+                }}</q-item-label>
               </q-item-section>
             </q-item>
           </q-list>
         </q-btn-dropdown>
         <q-space />
-
-        <!-- <q-btn-dropdown
-          :label="$store.state.Products.chosenProduct.name"
-          flat
-        >
-          <q-list>
-            <q-item
-              clickable
-              v-close-popup
-              v-for="product in products"
-              :key="product.id"
-              @click="setChosenProduct(product)"
-            >
-              <q-item-section>
-                <q-item-label>{{ product.name }}</q-item-label>
-              </q-item-section>
-            </q-item>
-          </q-list>
-        </q-btn-dropdown> -->
 
         <q-btn
           icon="account_circle"
@@ -61,10 +44,7 @@
           outline
           class="q-mr-sm"
         />
-        <q-btn
-          label="logout"
-          flat
-        />
+        <q-btn label="logout" flat />
       </q-toolbar>
     </q-header>
 
@@ -75,10 +55,7 @@
       content-class="bg-grey-1"
     >
       <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
+        <q-item-label header class="text-grey-8">
           Navigation
         </q-item-label>
         <EssentialLink
@@ -107,39 +84,39 @@ const linksData: Links[] = [
     title: 'Home',
     caption: 'See your dashboard',
     icon: 'dashboard',
-    link: '/',
+    link: '/'
   },
   {
     title: 'Devices',
     caption: 'Updated devices',
     icon: 'devices',
-    link: 'devices',
+    link: 'devices'
   },
   {
     title: 'Firmwares',
     caption: 'Available firmwares',
     icon: 'system_update_alt',
-    link: 'firmwares',
+    link: 'firmwares'
   },
   {
     title: 'Feedback',
     caption: 'report bug or submit feature request',
     icon: 'feedback',
-    link: 'feedback',
+    link: 'feedback'
   },
   {
     title: 'New product',
     caption: 'Create a new product',
     icon: 'post_add',
-    link: 'newproduct',
-  },
+    link: 'newproduct'
+  }
 ];
 
 import { Vue, Component } from 'vue-property-decorator';
 import { products } from '../store/products/state';
 
 @Component({
-  components: { EssentialLink },
+  components: { EssentialLink }
 })
 export default class MainLayout extends Vue {
   leftDrawerOpen = false;
@@ -153,15 +130,7 @@ export default class MainLayout extends Vue {
 
   setChosenProduct(value) {
     this.$store.commit('Products/setChosenProduct', value);
-    // this.$store.Products.setChosenProduct(value);
   }
-  // get and set chose product in the Products store
-  // get selected(): string {
-  //   return this.$store.state.Products.chosenProduct;
-  // }
-  // set selected(value) {
-  //   this.$store.commit('Products/setChosenProduct', value);
-  // }
 }
 </script>
 

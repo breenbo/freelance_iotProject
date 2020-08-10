@@ -12,9 +12,13 @@
       <template v-slot:body-cell="props">
         <q-td
           :props="props"
-          :class="(props.row.version === firmwares[chosenProduct.id].default.version ? 'bg-green-11 text-grey-8':'')"
+          :class="
+            props.row.version === firmwares[chosenProduct.id].default.version
+              ? 'bg-green-11 text-grey-8'
+              : ''
+          "
         >
-          <span class="text-subtitle1">{{ props.value|niceNumber }}</span>
+          <span class="text-subtitle1">{{ props.value | niceNumber }}</span>
         </q-td>
       </template>
     </q-table>
@@ -28,8 +32,8 @@ import { Vue, Component } from 'vue-property-decorator';
   filters: {
     niceNumber(value: number): string {
       return value.toLocaleString('us');
-    },
-  },
+    }
+  }
 })
 export default class versionList extends Vue {
   columns = [
@@ -38,10 +42,10 @@ export default class versionList extends Vue {
       required: true,
       label: 'Version',
       align: 'center',
-      field: (row) => row.version,
-      format: (val) => `v${val}`,
+      field: 'version',
+      format: val => `v${val}`,
       sortable: true,
-      headerClasses: 'bg-grey-2',
+      headerClasses: 'bg-grey-2'
     },
     {
       name: 'numberInUse',
@@ -49,15 +53,15 @@ export default class versionList extends Vue {
       label: 'Devices in use',
       field: 'numberInUse',
       sortable: true,
-      headerClasses: 'bg-grey-2',
-    },
+      headerClasses: 'bg-grey-2'
+    }
   ];
   get versions() {
     let versionsArray = [];
     // add the default firmware
     versionsArray[0] = this.firmwares[this.chosenProduct.id].default;
     // add all older firmwares in array
-    this.firmwares[this.chosenProduct.id].older.forEach((element) => {
+    this.firmwares[this.chosenProduct.id].older.forEach(element => {
       versionsArray.push(element);
     });
     // return array with all firmwares
