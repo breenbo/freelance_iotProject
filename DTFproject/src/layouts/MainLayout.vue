@@ -11,12 +11,32 @@
           @click="leftDrawerOpen = !leftDrawerOpen"
         />
 
-        <q-toolbar-title>
-          {{ $store.state.Products.chosenProduct.name }}
-        </q-toolbar-title>
-
+        <q-space />
         <q-btn-dropdown
-          label="Select a product"
+          :label="chosenProduct.name ? chosenProduct.name:  'Choose a product'"
+          flat
+          no-caps
+          size="xl"
+          class="q-ma-none q-pa-none productSelect"
+        >
+          <q-list>
+            <q-item
+              v-for="product in products"
+              :key="product.id"
+              clickable
+              v-close-popup
+              @click="setChosenProduct(product)"
+            >
+              <q-item-section>
+                <q-item-label class="text-h5 text-grey-7">{{ product.name }}</q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
+        <q-space />
+
+        <!-- <q-btn-dropdown
+          :label="$store.state.Products.chosenProduct.name"
           flat
         >
           <q-list>
@@ -32,8 +52,7 @@
               </q-item-section>
             </q-item>
           </q-list>
-        </q-btn-dropdown>
-        <q-space />
+        </q-btn-dropdown> -->
 
         <q-btn
           icon="account_circle"
@@ -73,7 +92,7 @@
     <q-page-container>
       <router-view />
     </q-page-container>
-    <q-footer reveal>
+    <q-footer>
       <div class="text-center q-my-sm">Footer</div>
     </q-footer>
   </q-layout>
@@ -127,6 +146,11 @@ export default class MainLayout extends Vue {
   essentialLinks = linksData;
   products: products[] = this.$store.state.Products.products;
 
+  // get data from store for less typing
+  get chosenProduct() {
+    return this.$store.state.Products.chosenProduct;
+  }
+
   setChosenProduct(value) {
     this.$store.commit('Products/setChosenProduct', value);
     // this.$store.Products.setChosenProduct(value);
@@ -143,5 +167,5 @@ export default class MainLayout extends Vue {
 
 <style lang="sass" scoped>
 .productSelect
-  min-width: 180px !important
+  min-width: 250px !important
 </style>
