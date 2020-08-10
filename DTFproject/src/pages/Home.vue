@@ -1,28 +1,8 @@
 <template>
-  <q-page class="q-mt-lg">
-    <div class="row items-center q-gutter-lg">
-      <div class="col-7 q-my-lg">
+  <q-page class="q-ma-xl pageContainer">
+    <div class="row justify-center">
+      <div class="col-10 q-my-lg">
         <iotSVG />
-      </div>
-      <div class="col">
-        <div class="row text-h2 text-grey-7 q-my-md">
-          Manage and update <br />with ease
-        </div>
-        <div class="row text-h4 text-grey q-mb-lg">
-          Please chose a product :
-        </div>
-        <div class="row justify-center q-gutter-lg">
-          <q-btn
-            v-for="product in products"
-            :key="product.id"
-            :label="product.name"
-            color="secondary"
-            class="col-2 text-grey-9 q-py-xs"
-            unelevated
-            @click="setChosenProduct(product)"
-            :outline="chosenProduct !== product"
-          />
-        </div>
       </div>
     </div>
     <div class="row justify-center text-h2 text-grey-7 q-my-md q-mb-xl">
