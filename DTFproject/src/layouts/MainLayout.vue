@@ -18,6 +18,7 @@
           no-caps
           size="xl"
           class="q-ma-none q-pa-none productSelect"
+          v-if="chosenProduct"
         >
           <q-list>
             <q-item
@@ -44,7 +45,10 @@
           outline
           class="q-mr-sm"
         />
-        <q-btn label="logout" flat />
+        <q-btn
+          label="logout"
+          flat
+        />
       </q-toolbar>
     </q-header>
 
@@ -55,7 +59,10 @@
       content-class="bg-grey-1"
     >
       <q-list>
-        <q-item-label header class="text-grey-8">
+        <q-item-label
+          header
+          class="text-grey-8"
+        >
           Navigation
         </q-item-label>
         <EssentialLink
@@ -66,7 +73,7 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container class="q-mx-xl pageContainer">
       <router-view />
     </q-page-container>
     <q-footer>
@@ -84,39 +91,39 @@ const linksData: Links[] = [
     title: 'Home',
     caption: 'See your dashboard',
     icon: 'dashboard',
-    link: '/'
+    link: '/',
   },
   {
     title: 'Devices',
     caption: 'Updated devices',
     icon: 'devices',
-    link: 'devices'
+    link: 'devices',
   },
   {
     title: 'Firmwares',
     caption: 'Available firmwares',
     icon: 'system_update_alt',
-    link: 'firmwares'
+    link: 'firmwares',
   },
   {
     title: 'Feedback',
     caption: 'report bug or submit feature request',
     icon: 'feedback',
-    link: 'feedback'
+    link: 'feedback',
   },
   {
     title: 'New product',
     caption: 'Create a new product',
     icon: 'post_add',
-    link: 'newproduct'
-  }
+    link: 'newproduct',
+  },
 ];
 
 import { Vue, Component } from 'vue-property-decorator';
 import { products } from '../store/products/state';
 
 @Component({
-  components: { EssentialLink }
+  components: { EssentialLink },
 })
 export default class MainLayout extends Vue {
   leftDrawerOpen = false;
@@ -128,13 +135,17 @@ export default class MainLayout extends Vue {
     return this.$store.state.Products.chosenProduct;
   }
 
-  setChosenProduct(value) {
+  setChosenProduct(value: products) {
     this.$store.commit('Products/setChosenProduct', value);
   }
 }
 </script>
 
 <style lang="sass" scoped>
+.pageContainer
+  max-width: 1600px !important
+  margin: 0 auto
+
 .productSelect
   min-width: 250px !important
 </style>

@@ -1,10 +1,6 @@
 <template>
   <!-- devices card -->
-  <q-card
-    class="col deviceCard column"
-    flat
-    bordered
-  >
+  <q-card class="col deviceCard column">
     <q-card-section class="col">
       <div class="text-h4 text-grey-7">
         {{ chosenProduct.numberOfDevices | niceNumber }}
@@ -22,6 +18,7 @@
         type="a"
         target="_blank"
         :href="chosenProduct.url"
+        no-caps
       />
       <!-- <q-icon
               name="link"
@@ -46,6 +43,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
+import { products } from '../../store/products/state';
 
 @Component({
   filters: {
@@ -56,7 +54,7 @@ import { Vue, Component } from 'vue-property-decorator';
 })
 export default class deviceCard extends Vue {
   // computed datas from store
-  get chosenProduct() {
+  get chosenProduct(): products {
     return this.$store.state.Products.chosenProduct;
   }
 }
@@ -65,5 +63,5 @@ export default class deviceCard extends Vue {
 <style lang="sass" scoped>
 .deviceCard
   // border-top: solid 6px $primary
-    border-left: solid 6px $primary
+  border-left: solid 6px $primary
 </style>

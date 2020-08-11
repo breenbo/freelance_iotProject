@@ -7,7 +7,7 @@
       :columns="columns"
       row-key="name"
       flat
-      hide-pagination
+      :hide-pagination="numberBinary < 6"
     >
       <template v-slot:body-cell="props">
         <q-td
@@ -27,13 +27,15 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
+import { products } from '../../store/products/state';
+import { Firmware } from '../../store/firmwares/state';
 
 @Component({
   filters: {
     niceNumber(value: number): string {
       return value.toLocaleString('us');
-    }
-  }
+    },
+  },
 })
 export default class versionList extends Vue {
   columns = [
@@ -43,9 +45,9 @@ export default class versionList extends Vue {
       label: 'Version',
       align: 'center',
       field: 'version',
-      format: val => `v${val}`,
+      format: (val: string) => `v${val}`,
       sortable: true,
-      headerClasses: 'bg-grey-2'
+      headerClasses: 'bg-grey-2',
     },
     {
       name: 'numberInUse',
@@ -53,27 +55,33 @@ export default class versionList extends Vue {
       label: 'Devices in use',
       field: 'numberInUse',
       sortable: true,
-      headerClasses: 'bg-grey-2'
-    }
+      headerClasses: 'bg-grey-2',
+    },
   ];
-  get versions() {
-    let versionsArray = [];
+  get versions(): Firmware[] {
+    let versionsArray: Firmware[] = [];
     // add the default firmware
     versionsArray[0] = this.firmwares[this.chosenProduct.id].default;
     // add all older firmwares in array
-    this.firmwares[this.chosenProduct.id].older.forEach(element => {
+    this.firmwares[this.chosenProduct.id].other.forEach((element: Firmware) => {
       versionsArray.push(element);
     });
+    // sort array from newer to older
+    versionsArray.sort((a, b) => b.version - a.version);
     // return array with all firmwares
     return versionsArray;
   }
   // computed datas from store
-  get chosenProduct() {
+  get chosenProduct(): products {
     return this.$store.state.Products.chosenProduct;
   }
 
-  get firmwares() {
+  get firmwares(): Firmware {
     return this.$store.state.Firmwares;
+  }
+  // calculate number of binaries : older array length + 1 (default firmware)
+  get numberBinary(): number {
+    return this.firmwares[this.chosenProduct.id].other.length + 1;
   }
 }
 </script>

@@ -1,60 +1,81 @@
 <template>
-  <div>
-    <q-card class="q-ma-xl" v-if="details">
-      <q-card-section>
-        <div class="text-h4 text-grey-7">
-          {{ details.length }} device<span v-if="details.length > 1">s</span>
-        </div>
-        <div class="text-subtitle2 text-grey-6">
-          associated with {{ chosenProduct.name }}
-        </div>
-      </q-card-section>
-      <q-card-section>
-        <q-table
-          title=""
-          :data="details"
-          :columns="columns"
-          row-key="name"
-          flat
-          hide-pagination
-        />
-      </q-card-section>
-    </q-card>
+  <q-page>
+    <chooseProduct v-if="!chosenProduct" />
+    <div>
+      <!-- page title -->
+      <div
+        class="text-h4 text-grey-6 q-pt-xl"
+        v-if="details"
+      >
+        Devices associated with {{ chosenProduct.name }}
+      </div>
+      <q-card
+        class="q-ma-xl borderColor"
+        v-if="details"
+        bordered
+      >
+        <q-card-section class="row">
+          <!-- card title -->
+          <div class="col">
 
-    <q-card class="q-ma-xl" v-else>
-      <q-card-section>
-        <div class="text-h6">Our Changing Planet</div>
-        <div class="text-subtitle2">by John Doe</div>
-      </q-card-section>
-      <q-card-section>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit
-      </q-card-section>
-    </q-card>
+            <div class="text-h4 text-grey-7">
+              {{ details.length }} <span class="text-h5 text-grey-6">device<span v-if="details.length > 1">s</span></span>
+            </div>
+          </div>
+          <!-- search input -->
+          <div class="col">
 
-    This view will be a simple table-like view of all the devices that are
-    associated with the active product. Each row should show the following for
-    each device:
-    <ul>
-      <li>Device ID (most likely in the form of a MAC address)</li>
-      <li>Firmware version</li>
-      <li>Last check-in time</li>
-      <li>Last update time</li>
-    </ul>
-    Above the table area should be a search/filter option along with a total of
-    how many items are in the table. If no devices are associated with the
-    product yet the view should just display a message like “Devices requesting
-    firmware updates from this product will display here” Devices will
-    auto-associate with the product as they hit the OTA service with the product
-    specific URL. For the purpose of this exercise feel free to mock up devices
-    with the attributes listed above.
-  </div>
+            <q-input
+              v-model="filter"
+              placeholder="Search"
+            >
+              <template v-slot:append>
+                <q-icon name="search" />
+              </template>
+            </q-input>
+          </div>
+        </q-card-section>
+        <!-- devices table -->
+        <q-card-section>
+          <q-table
+            title=""
+            :data="details"
+            :columns="columns"
+            row-key="name"
+            flat
+            hide-pagination
+            :filter="filter"
+          >
+          </q-table>
+        </q-card-section>
+      </q-card>
+
+      <!-- Banner if no device attached to product -->
+      <div
+        class="windowHeight row items-center"
+        v-if="!details && chosenProduct"
+      >
+        <div class="svgContainer">
+          <noDevice />
+        </div>
+        <div class="text-h3 text-grey-6">
+          Devices requesting firmware updates from this product will display here
+        </div>
+      </div>
+    </div>
+  </q-page>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
+import chooseProduct from '../components/chooseProduct.vue';
+import noDevice from '../components/svg/noDevice.vue';
 
-@Component
+@Component({
+  components: { chooseProduct, noDevice },
+})
 export default class Devices extends Vue {
+  filter = '';
   columns = [
     {
       name: 'name',
@@ -63,7 +84,7 @@ export default class Devices extends Vue {
       align: 'left',
       field: 'name',
       sortable: true,
-      headerClasses: 'bg-grey-2'
+      headerClasses: 'bg-grey-2',
     },
     {
       name: 'id',
@@ -73,7 +94,7 @@ export default class Devices extends Vue {
       field: 'macAdress',
       // format: val => `${val}`,
       sortable: true,
-      headerClasses: 'bg-grey-2'
+      headerClasses: 'bg-grey-2',
     },
     {
       name: 'firmware',
@@ -81,7 +102,7 @@ export default class Devices extends Vue {
       label: 'Firmware version',
       field: 'firmware',
       sortable: true,
-      headerClasses: 'bg-grey-2'
+      headerClasses: 'bg-grey-2',
     },
     {
       name: 'lastCheck',
@@ -89,7 +110,7 @@ export default class Devices extends Vue {
       label: 'Last Check-in',
       field: 'lastCheck',
       sortable: true,
-      headerClasses: 'bg-grey-2'
+      headerClasses: 'bg-grey-2',
     },
     {
       name: 'lastUpdate',
@@ -97,8 +118,8 @@ export default class Devices extends Vue {
       label: 'Last update',
       field: 'lastUpdate',
       sortable: true,
-      headerClasses: 'bg-grey-2'
-    }
+      headerClasses: 'bg-grey-2',
+    },
   ];
   get chosenProduct() {
     return this.$store.state.Products.chosenProduct;
@@ -109,4 +130,14 @@ export default class Devices extends Vue {
 }
 </script>
 
-<style lang="sass" scoped></style>
+<style lang="sass" scoped>
+.borderColor
+  border-left: solid 6px $secondary
+
+.windowHeight
+  height: 80vh!important
+
+.svgContainer
+  margin: 0 auto
+  width: 50%
+</style>

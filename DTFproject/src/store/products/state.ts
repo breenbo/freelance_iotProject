@@ -12,7 +12,7 @@ export interface products {
 }
 
 export interface ProductStateInterface {
-  chosenProduct: string;
+  chosenProduct: products;
   products: products[];
 }
 

@@ -28,7 +28,7 @@ const state: DevicesStateInterface = {
     },
     {
       name: 'Iron Tooth',
-      macAdress: '33:33:11:55:11:99',
+      macAdress: '33:33:11:69:41:00',
       firmware: 'v6',
       lastCheck: '2020/08/03',
       lastUpdate: '2019/04/04'

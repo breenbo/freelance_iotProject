@@ -1,5 +1,5 @@
 <template>
-  <q-card class="col firmwareCard" flat bordered>
+  <q-card class="col firmwareCard">
     <q-card-section>
       <div class="row text-h4 text-grey-7">
         <div class="col">
@@ -23,8 +23,16 @@
       <versionTable />
     </q-card-section>
     <q-separator inset />
-    <q-card-actions align="center" class="col-auto">
-      <q-btn class="full-width" flat label="Manage firmwares" to="/firmwares" />
+    <q-card-actions
+      align="center"
+      class="col-auto"
+    >
+      <q-btn
+        class="full-width"
+        flat
+        label="Manage firmwares"
+        to="/firmwares"
+      />
     </q-card-actions>
   </q-card>
 </template>
@@ -32,28 +40,30 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import versionTable from './versionTable.vue';
+import { products } from '../../store/products/state';
+import { Firmware } from '../../store/firmwares/state';
 
 @Component({
   components: { versionTable },
   filters: {
     niceNumber(value: number): string {
       return value.toLocaleString('us');
-    }
-  }
+    },
+  },
 })
 export default class Home extends Vue {
   // computed datas from store
-  get chosenProduct() {
+  get chosenProduct(): products {
     return this.$store.state.Products.chosenProduct;
   }
 
-  get firmwares() {
+  get firmwares(): Firmware {
     return this.$store.state.Firmwares;
   }
 
   // calculate number of binaries : older array length + 1 (default firmware)
-  get numberBinary() {
-    return this.firmwares[this.chosenProduct.id].older.length + 1;
+  get numberBinary(): number {
+    return this.firmwares[this.chosenProduct.id].other.length + 1;
   }
 }
 </script>
