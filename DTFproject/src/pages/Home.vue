@@ -26,16 +26,18 @@ import chooseProduct from '../components/chooseProduct.vue';
 import deviceCard from '../components/deviceCard/deviceCard.vue';
 import firmwareCard from '../components/firmwareCard/firmwareCard.vue';
 import timeCard from '../components/timeCard/timeCard.vue';
+import { products } from '../store/products/state';
+import { Firmware } from '../store/firmwares/state';
 
 @Component({
   components: { chooseProduct, deviceCard, firmwareCard, timeCard },
 })
 export default class Home extends Vue {
   // computed datas from store
-  get chosenProduct() {
+  get chosenProduct(): products {
     return this.$store.state.Products.chosenProduct;
   }
-  get chosenFirmware() {
+  get chosenFirmware(): Firmware {
     return this.$store.state.Firmwares[this.chosenProduct.id];
   }
 }

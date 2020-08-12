@@ -58,7 +58,7 @@
         <div class="svgContainer">
           <noDevice />
         </div>
-        <div class="text-h3 text-grey-6">
+        <div class="text-h3 text-weight-light text-grey-7">
           Devices requesting firmware updates from this product will display here
         </div>
       </div>

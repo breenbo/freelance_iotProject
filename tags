@@ -1,0 +1,352 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/ca0412ab/
+0	DTFproject/.vscode/extensions.json	/^    "dbaeumer.vscode-eslint",$/;"	s	array:recommendations
+0	DTFproject/.vscode/extensions.json	/^    "hookyqr.beautify",$/;"	s	array:unwantedRecommendations
+0	DTFproject/.vscode/settings.json	/^  "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],$/;"	s	array:eslint.validate
+0	DTFproject/package.json	/^    "last 10 Chrome versions",$/;"	s	array:browserslist
+0	DTFproject/sendSource/package.json	/^    "last 10 Chrome versions",$/;"	s	array:browserslist
+1	DTFproject/.vscode/extensions.json	/^    "dbaeumer.jshint",$/;"	s	array:unwantedRecommendations
+1	DTFproject/.vscode/extensions.json	/^    "esbenp.prettier-vscode",$/;"	s	array:recommendations
+1	DTFproject/.vscode/settings.json	/^  "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],$/;"	s	array:eslint.validate
+1	DTFproject/package.json	/^    "last 10 Firefox versions",$/;"	s	array:browserslist
+1	DTFproject/sendSource/package.json	/^    "last 10 Firefox versions",$/;"	s	array:browserslist
+2	DTFproject/.vscode/extensions.json	/^    "ms-vscode.vscode-typescript-tslint-plugin"$/;"	s	array:unwantedRecommendations
+2	DTFproject/.vscode/extensions.json	/^    "octref.vetur"$/;"	s	array:recommendations
+2	DTFproject/.vscode/settings.json	/^  "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],$/;"	s	array:eslint.validate
+2	DTFproject/package.json	/^    "last 4 Edge versions",$/;"	s	array:browserslist
+2	DTFproject/sendSource/package.json	/^    "last 4 Edge versions",$/;"	s	array:browserslist
+3	DTFproject/.vscode/settings.json	/^  "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],$/;"	s	array:eslint.validate
+3	DTFproject/package.json	/^    "last 7 Safari versions",$/;"	s	array:browserslist
+3	DTFproject/sendSource/package.json	/^    "last 7 Safari versions",$/;"	s	array:browserslist
+4	DTFproject/package.json	/^    "last 8 Android versions",$/;"	s	array:browserslist
+4	DTFproject/sendSource/package.json	/^    "last 8 Android versions",$/;"	s	array:browserslist
+5	DTFproject/package.json	/^    "last 8 ChromeAndroid versions",$/;"	s	array:browserslist
+5	DTFproject/sendSource/package.json	/^    "last 8 ChromeAndroid versions",$/;"	s	array:browserslist
+6	DTFproject/package.json	/^    "last 8 FirefoxAndroid versions",$/;"	s	array:browserslist
+6	DTFproject/sendSource/package.json	/^    "last 8 FirefoxAndroid versions",$/;"	s	array:browserslist
+7	DTFproject/package.json	/^    "last 10 iOS versions",$/;"	s	array:browserslist
+7	DTFproject/sendSource/package.json	/^    "last 10 iOS versions",$/;"	s	array:browserslist
+8	DTFproject/package.json	/^    "last 5 Opera versions"$/;"	s	array:browserslist
+8	DTFproject/sendSource/package.json	/^    "last 5 Opera versions"$/;"	s	array:browserslist
+@quasar/app	DTFproject/package.json	/^    "@quasar\/app": "^2.0.0",$/;"	s	object:devDependencies
+@quasar/app	DTFproject/sendSource/package.json	/^    "@quasar\/app": "^2.0.0",$/;"	s	object:devDependencies
+@quasar/extras	DTFproject/package.json	/^    "@quasar\/extras": "^1.0.0",$/;"	s	object:dependencies
+@quasar/extras	DTFproject/sendSource/package.json	/^    "@quasar\/extras": "^1.0.0",$/;"	s	object:dependencies
+@types/node	DTFproject/package.json	/^    "@types\/node": "^10.17.15",$/;"	s	object:devDependencies
+@types/node	DTFproject/sendSource/package.json	/^    "@types\/node": "^10.17.15",$/;"	s	object:devDependencies
+@typescript-eslint/eslint-plugin	DTFproject/package.json	/^    "@typescript-eslint\/eslint-plugin": "^3.3.0",$/;"	s	object:devDependencies
+@typescript-eslint/eslint-plugin	DTFproject/sendSource/package.json	/^    "@typescript-eslint\/eslint-plugin": "^3.3.0",$/;"	s	object:devDependencies
+@typescript-eslint/parser	DTFproject/package.json	/^    "@typescript-eslint\/parser": "^3.3.0",$/;"	s	object:devDependencies
+@typescript-eslint/parser	DTFproject/sendSource/package.json	/^    "@typescript-eslint\/parser": "^3.3.0",$/;"	s	object:devDependencies
+AnonymousFunction29934e1f0100	DTFproject/sendSource/quasar.conf.js	/^module.exports = configure(function (ctx) {$/;"	f
+AnonymousFunctione9730ad50100	DTFproject/quasar.conf.js	/^module.exports = configure(function (ctx) {$/;"	f
+Build the app for production	DTFproject/README.md	/^### Build the app for production$/;"	S	section:DTFproject (dtfproject)""Install the dependencies
+Build the app for production	DTFproject/sendSource/README.md	/^### Build the app for production$/;"	S	section:DTFproject (dtfproject)""Install the dependencies
+Customize the configuration	DTFproject/README.md	/^### Customize the configuration$/;"	S	section:DTFproject (dtfproject)""Install the dependencies
+Customize the configuration	DTFproject/sendSource/README.md	/^### Customize the configuration$/;"	S	section:DTFproject (dtfproject)""Install the dependencies
+DTFproject (dtfproject)	DTFproject/README.md	/^# DTFproject (dtfproject)$/;"	c
+DTFproject (dtfproject)	DTFproject/sendSource/README.md	/^# DTFproject (dtfproject)$/;"	c
+Device	DTFproject/sendSource/src/store/Devices/state.ts	/^export interface Device {$/;"	i
+Device	DTFproject/src/store/Devices/state.ts	/^export interface Device {$/;"	i
+Devices	DTFproject/sendSource/src/store/index.ts	/^  Devices: DevicesStateInterface;$/;"	p	interface:StateInterface
+Devices	DTFproject/src/store/index.ts	/^  Devices: DevicesStateInterface;$/;"	p	interface:StateInterface
+DevicesStateInterface	DTFproject/sendSource/src/store/Devices/state.ts	/^export interface DevicesStateInterface {$/;"	i
+DevicesStateInterface	DTFproject/src/store/Devices/state.ts	/^export interface DevicesStateInterface {$/;"	i
+Firmware	DTFproject/sendSource/src/store/firmwares/state.ts	/^export interface Firmware {$/;"	i
+Firmware	DTFproject/src/store/firmwares/state.ts	/^export interface Firmware {$/;"	i
+FirmwareStateInterface	DTFproject/sendSource/src/store/firmwares/state.ts	/^export interface FirmwareStateInterface {$/;"	i
+FirmwareStateInterface	DTFproject/src/store/firmwares/state.ts	/^export interface FirmwareStateInterface {$/;"	i
+Firmwares	DTFproject/sendSource/src/store/index.ts	/^  Firmwares: FirmwareStateInterface;$/;"	p	interface:StateInterface
+Firmwares	DTFproject/src/store/index.ts	/^  Firmwares: FirmwareStateInterface;$/;"	p	interface:StateInterface
+Install the dependencies	DTFproject/README.md	/^## Install the dependencies$/;"	s	chapter:DTFproject (dtfproject)
+Install the dependencies	DTFproject/sendSource/README.md	/^## Install the dependencies$/;"	s	chapter:DTFproject (dtfproject)
+Links	DTFproject/sendSource/src/components/models.ts	/^export interface Links {$/;"	i
+Links	DTFproject/src/components/models.ts	/^export interface Links {$/;"	i
+Lint the files	DTFproject/README.md	/^### Lint the files$/;"	S	section:DTFproject (dtfproject)""Install the dependencies
+Lint the files	DTFproject/sendSource/README.md	/^### Lint the files$/;"	S	section:DTFproject (dtfproject)""Install the dependencies
+Meta	DTFproject/sendSource/src/components/models.ts	/^export interface Meta {$/;"	i
+Meta	DTFproject/src/components/models.ts	/^export interface Meta {$/;"	i
+NODE_ENV	DTFproject/sendSource/src/env.d.ts	/^    NODE_ENV: string;$/;"	p	interface:NodeJS.ProcessEnv
+NODE_ENV	DTFproject/src/env.d.ts	/^    NODE_ENV: string;$/;"	p	interface:NodeJS.ProcessEnv
+NodeJS	DTFproject/sendSource/src/env.d.ts	/^declare namespace NodeJS {$/;"	n
+NodeJS	DTFproject/src/env.d.ts	/^declare namespace NodeJS {$/;"	n
+ProcessEnv	DTFproject/sendSource/src/env.d.ts	/^  interface ProcessEnv {$/;"	i	namespace:NodeJS
+ProcessEnv	DTFproject/src/env.d.ts	/^  interface ProcessEnv {$/;"	i	namespace:NodeJS
+ProductModule	DTFproject/sendSource/src/store/products/index.ts	/^const ProductModule: Module<ProductStateInterface, StateInterface> = {$/;"	C
+ProductModule	DTFproject/src/store/products/index.ts	/^const ProductModule: Module<ProductStateInterface, StateInterface> = {$/;"	C
+ProductStateInterface	DTFproject/sendSource/src/store/products/state.ts	/^export interface ProductStateInterface {$/;"	i
+ProductStateInterface	DTFproject/src/store/products/state.ts	/^export interface ProductStateInterface {$/;"	i
+Products	DTFproject/sendSource/src/store/index.ts	/^  Products: ProductStateInterface;$/;"	p	interface:StateInterface
+Products	DTFproject/src/store/index.ts	/^  Products: ProductStateInterface;$/;"	p	interface:StateInterface
+QuasarFeatureFlags	DTFproject/sendSource/src/store/store-flag.d.ts	/^  interface QuasarFeatureFlags {$/;"	i
+QuasarFeatureFlags	DTFproject/src/store/store-flag.d.ts	/^  interface QuasarFeatureFlags {$/;"	i
+Router	DTFproject/sendSource/src/router/index.ts	/^  const Router = new VueRouter({$/;"	C
+Router	DTFproject/src/router/index.ts	/^  const Router = new VueRouter({$/;"	C
+Start the app in development mode (hot-code reloading, error reporting, etc.)	DTFproject/README.md	/^### Start the app in development mode (hot-code reloading, error reporting, etc.)$/;"	S	section:DTFproject (dtfproject)""Install the dependencies
+Start the app in development mode (hot-code reloading, error reporting, etc.)	DTFproject/sendSource/README.md	/^### Start the app in development mode (hot-code reloading, error reporting, etc.)$/;"	S	section:DTFproject (dtfproject)""Install the dependencies
+StateInterface	DTFproject/sendSource/src/store/index.ts	/^export interface StateInterface {$/;"	i
+StateInterface	DTFproject/src/store/index.ts	/^export interface StateInterface {$/;"	i
+Store	DTFproject/sendSource/src/store/index.ts	/^  const Store = new Vuex.Store<StateInterface>({$/;"	C
+Store	DTFproject/src/store/index.ts	/^  const Store = new Vuex.Store<StateInterface>({$/;"	C
+Todo	DTFproject/sendSource/src/components/models.ts	/^export interface Todo {$/;"	i
+Todo	DTFproject/src/components/models.ts	/^export interface Todo {$/;"	i
+VUE_ROUTER_BASE	DTFproject/sendSource/src/env.d.ts	/^    VUE_ROUTER_BASE: string | undefined;$/;"	p	interface:NodeJS.ProcessEnv
+VUE_ROUTER_BASE	DTFproject/src/env.d.ts	/^    VUE_ROUTER_BASE: string | undefined;$/;"	p	interface:NodeJS.ProcessEnv
+VUE_ROUTER_MODE	DTFproject/sendSource/src/env.d.ts	/^    VUE_ROUTER_MODE: 'hash' | 'history' | 'abstract' | undefined;$/;"	p	interface:NodeJS.ProcessEnv
+VUE_ROUTER_MODE	DTFproject/src/env.d.ts	/^    VUE_ROUTER_MODE: 'hash' | 'history' | 'abstract' | undefined;$/;"	p	interface:NodeJS.ProcessEnv
+actions	DTFproject/sendSource/src/store/Devices/actions.ts	/^const actions: ActionTree<DevicesStateInterface, StateInterface> = {$/;"	C
+actions	DTFproject/sendSource/src/store/Devices/index.ts	/^  actions,$/;"	C
+actions	DTFproject/sendSource/src/store/firmwares/actions.ts	/^const actions: ActionTree<FirmwareStateInterface, StateInterface> = {$/;"	C
+actions	DTFproject/sendSource/src/store/firmwares/index.ts	/^  actions,$/;"	C
+actions	DTFproject/sendSource/src/store/products/actions.ts	/^const actions: ActionTree<ProductStateInterface, StateInterface> = {$/;"	C
+actions	DTFproject/sendSource/src/store/products/index.ts	/^  actions,$/;"	C
+actions	DTFproject/src/store/Devices/actions.ts	/^const actions: ActionTree<DevicesStateInterface, StateInterface> = {$/;"	C
+actions	DTFproject/src/store/Devices/index.ts	/^  actions,$/;"	C
+actions	DTFproject/src/store/firmwares/actions.ts	/^const actions: ActionTree<FirmwareStateInterface, StateInterface> = {$/;"	C
+actions	DTFproject/src/store/firmwares/index.ts	/^  actions,$/;"	C
+actions	DTFproject/src/store/products/actions.ts	/^const actions: ActionTree<ProductStateInterface, StateInterface> = {$/;"	C
+actions	DTFproject/src/store/products/index.ts	/^  actions,$/;"	C
+author	DTFproject/package.json	/^  "author": "breenbo <berrehuelbruno@gmail.com>",$/;"	s
+author	DTFproject/sendSource/package.json	/^  "author": "breenbo <berrehuelbruno@gmail.com>",$/;"	s
+babel-eslint	DTFproject/package.json	/^    "babel-eslint": "^10.0.1",$/;"	s	object:devDependencies
+babel-eslint	DTFproject/sendSource/package.json	/^    "babel-eslint": "^10.0.1",$/;"	s	object:devDependencies
+baseUrl	DTFproject/sendSource/tsconfig.json	/^    "baseUrl": ".",$/;"	s	object:compilerOptions
+baseUrl	DTFproject/tsconfig.json	/^    "baseUrl": ".",$/;"	s	object:compilerOptions
+browser	DTFproject/.eslintrc.js	/^    browser: true$/;"	p	class:module.exports.env
+browser	DTFproject/sendSource/.eslintrc.js	/^    browser: true$/;"	p	class:module.exports.env
+browserslist	DTFproject/package.json	/^  "browserslist": [$/;"	a
+browserslist	DTFproject/sendSource/package.json	/^  "browserslist": [$/;"	a
+caption	DTFproject/sendSource/src/components/models.ts	/^  caption: string;$/;"	p	interface:Links
+caption	DTFproject/src/components/models.ts	/^  caption: string;$/;"	p	interface:Links
+chart.js	DTFproject/package.json	/^    "chart.js": "^2.9.3",$/;"	s	object:dependencies
+chart.js	DTFproject/sendSource/package.json	/^    "chart.js": "^2.9.3",$/;"	s	object:dependencies
+checked	DTFproject/sendSource/src/store/products/state.ts	/^export interface checked {$/;"	i
+checked	DTFproject/src/store/products/state.ts	/^export interface checked {$/;"	i
+children	DTFproject/sendSource/src/store/firmwares/state.ts	/^  children?: versionTree[];$/;"	p	interface:versionTree
+children	DTFproject/src/store/firmwares/state.ts	/^  children?: versionTree[];$/;"	p	interface:versionTree
+chosenProduct	DTFproject/sendSource/src/store/products/state.ts	/^  chosenProduct: products;$/;"	p	interface:ProductStateInterface
+chosenProduct	DTFproject/src/store/products/state.ts	/^  chosenProduct: products;$/;"	p	interface:ProductStateInterface
+compilerOptions	DTFproject/sendSource/tsconfig.json	/^  "compilerOptions": {$/;"	o
+compilerOptions	DTFproject/tsconfig.json	/^  "compilerOptions": {$/;"	o
+content	DTFproject/sendSource/src/components/models.ts	/^  content: string;$/;"	p	interface:Todo
+content	DTFproject/src/components/models.ts	/^  content: string;$/;"	p	interface:Todo
+core-js	DTFproject/package.json	/^    "core-js": "^3.6.5",$/;"	s	object:dependencies
+core-js	DTFproject/sendSource/package.json	/^    "core-js": "^3.6.5",$/;"	s	object:dependencies
+createdAt	DTFproject/sendSource/src/store/firmwares/state.ts	/^        createdAt: '2017\/08\/07'$/;"	C
+createdAt	DTFproject/sendSource/src/store/firmwares/state.ts	/^        createdAt: '2020\/08\/07'$/;"	C
+createdAt	DTFproject/sendSource/src/store/firmwares/state.ts	/^      createdAt: '2020\/08\/07'$/;"	C
+createdAt	DTFproject/sendSource/src/store/firmwares/state.ts	/^  createdAt: string;$/;"	p	interface:Firmware
+createdAt	DTFproject/src/store/firmwares/state.ts	/^        createdAt: '2017\/08\/07'$/;"	C
+createdAt	DTFproject/src/store/firmwares/state.ts	/^        createdAt: '2020\/08\/07'$/;"	C
+createdAt	DTFproject/src/store/firmwares/state.ts	/^      createdAt: '2020\/08\/07'$/;"	C
+createdAt	DTFproject/src/store/firmwares/state.ts	/^  createdAt: string;$/;"	p	interface:Firmware
+default	DTFproject/sendSource/src/store/firmwares/state.ts	/^  default: boolean;$/;"	p	interface:Firmware
+default	DTFproject/src/store/firmwares/state.ts	/^  default: boolean;$/;"	p	interface:Firmware
+dependencies	DTFproject/package.json	/^  "dependencies": {$/;"	o
+dependencies	DTFproject/sendSource/package.json	/^  "dependencies": {$/;"	o
+description	DTFproject/package.json	/^  "description": "Manage IOT firmware",$/;"	s
+description	DTFproject/sendSource/package.json	/^  "description": "Manage IOT firmware",$/;"	s
+devDependencies	DTFproject/package.json	/^  "devDependencies": {$/;"	o
+devDependencies	DTFproject/sendSource/package.json	/^  "devDependencies": {$/;"	o
+devicesModule	DTFproject/sendSource/src/store/Devices/index.ts	/^const devicesModule: Module<DevicesStateInterface, StateInterface> = {$/;"	C
+devicesModule	DTFproject/src/store/Devices/index.ts	/^const devicesModule: Module<DevicesStateInterface, StateInterface> = {$/;"	C
+ecmaVersion	DTFproject/.eslintrc.js	/^    ecmaVersion: 2018, \/\/ Allows for the parsing of modern ECMAScript features$/;"	p	class:module.exports.parserOptions
+ecmaVersion	DTFproject/sendSource/.eslintrc.js	/^    ecmaVersion: 2018, \/\/ Allows for the parsing of modern ECMAScript features$/;"	p	class:module.exports.parserOptions
+engines	DTFproject/package.json	/^  "engines": {$/;"	o
+engines	DTFproject/sendSource/package.json	/^  "engines": {$/;"	o
+env	DTFproject/.eslintrc.js	/^  env: {$/;"	c	class:module.exports
+env	DTFproject/sendSource/.eslintrc.js	/^  env: {$/;"	c	class:module.exports
+eslint	DTFproject/package.json	/^    "eslint": "^6.8.0",$/;"	s	object:devDependencies
+eslint	DTFproject/sendSource/package.json	/^    "eslint": "^6.8.0",$/;"	s	object:devDependencies
+eslint-config-prettier	DTFproject/package.json	/^    "eslint-config-prettier": "^6.9.0",$/;"	s	object:devDependencies
+eslint-config-prettier	DTFproject/sendSource/package.json	/^    "eslint-config-prettier": "^6.9.0",$/;"	s	object:devDependencies
+eslint-loader	DTFproject/package.json	/^    "eslint-loader": "^3.0.3",$/;"	s	object:devDependencies
+eslint-loader	DTFproject/sendSource/package.json	/^    "eslint-loader": "^3.0.3",$/;"	s	object:devDependencies
+eslint-plugin-vue	DTFproject/package.json	/^    "eslint-plugin-vue": "^6.1.2"$/;"	s	object:devDependencies
+eslint-plugin-vue	DTFproject/sendSource/package.json	/^    "eslint-plugin-vue": "^6.1.2"$/;"	s	object:devDependencies
+eslint.validate	DTFproject/.vscode/settings.json	/^  "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],$/;"	a
+experimentalDecorators	DTFproject/sendSource/tsconfig.json	/^    "experimentalDecorators": true$/;"	b	object:compilerOptions
+experimentalDecorators	DTFproject/tsconfig.json	/^    "experimentalDecorators": true$/;"	b	object:compilerOptions
+exports	DTFproject/.eslintrc.js	/^module.exports = {$/;"	c	class:module
+exports	DTFproject/.postcssrc.js	/^module.exports = {$/;"	c	class:module
+exports	DTFproject/babel.config.js	/^module.exports = {$/;"	c	class:module
+exports	DTFproject/sendSource/.eslintrc.js	/^module.exports = {$/;"	c	class:module
+exports	DTFproject/sendSource/.postcssrc.js	/^module.exports = {$/;"	c	class:module
+exports	DTFproject/sendSource/babel.config.js	/^module.exports = {$/;"	c	class:module
+extends	DTFproject/sendSource/tsconfig.json	/^  "extends": "@quasar\/app\/tsconfig-preset",$/;"	s
+extends	DTFproject/tsconfig.json	/^  "extends": "@quasar\/app\/tsconfig-preset",$/;"	s
+extraFileExtensions	DTFproject/.eslintrc.js	/^    extraFileExtensions: ['.vue'],$/;"	p	class:module.exports.parserOptions
+extraFileExtensions	DTFproject/sendSource/.eslintrc.js	/^    extraFileExtensions: ['.vue'],$/;"	p	class:module.exports.parserOptions
+firmware	DTFproject/sendSource/src/store/Devices/state.ts	/^  firmware: string;$/;"	p	interface:Device
+firmware	DTFproject/src/store/Devices/state.ts	/^  firmware: string;$/;"	p	interface:Device
+firmwareModule	DTFproject/sendSource/src/store/firmwares/index.ts	/^const firmwareModule: Module<FirmwareStateInterface, StateInterface> = {$/;"	C
+firmwareModule	DTFproject/src/store/firmwares/index.ts	/^const firmwareModule: Module<FirmwareStateInterface, StateInterface> = {$/;"	C
+getters	DTFproject/sendSource/src/store/Devices/getters.ts	/^const getters: GetterTree<DevicesStateInterface, StateInterface> = {$/;"	C
+getters	DTFproject/sendSource/src/store/Devices/index.ts	/^  getters,$/;"	C
+getters	DTFproject/sendSource/src/store/firmwares/getters.ts	/^const getters: GetterTree<FirmwareStateInterface, StateInterface> = {$/;"	C
+getters	DTFproject/sendSource/src/store/firmwares/index.ts	/^  getters,$/;"	C
+getters	DTFproject/sendSource/src/store/products/getters.ts	/^const getters: GetterTree<ProductStateInterface, StateInterface> = {$/;"	C
+getters	DTFproject/sendSource/src/store/products/index.ts	/^  getters,$/;"	C
+getters	DTFproject/src/store/Devices/getters.ts	/^const getters: GetterTree<DevicesStateInterface, StateInterface> = {$/;"	C
+getters	DTFproject/src/store/Devices/index.ts	/^  getters,$/;"	C
+getters	DTFproject/src/store/firmwares/getters.ts	/^const getters: GetterTree<FirmwareStateInterface, StateInterface> = {$/;"	C
+getters	DTFproject/src/store/firmwares/index.ts	/^  getters,$/;"	C
+getters	DTFproject/src/store/products/getters.ts	/^const getters: GetterTree<ProductStateInterface, StateInterface> = {$/;"	C
+getters	DTFproject/src/store/products/index.ts	/^  getters,$/;"	C
+icon	DTFproject/sendSource/src/components/models.ts	/^  icon: string;$/;"	p	interface:Links
+icon	DTFproject/src/components/models.ts	/^  icon: string;$/;"	p	interface:Links
+id	DTFproject/sendSource/src/components/models.ts	/^  id: number;$/;"	p	interface:Todo
+id	DTFproject/sendSource/src/store/products/state.ts	/^  id: string;$/;"	p	interface:products
+id	DTFproject/src/components/models.ts	/^  id: number;$/;"	p	interface:Todo
+id	DTFproject/src/store/products/state.ts	/^  id: string;$/;"	p	interface:products
+label	DTFproject/sendSource/src/store/firmwares/state.ts	/^  label: string;$/;"	p	interface:versionTree
+label	DTFproject/src/store/firmwares/state.ts	/^  label: string;$/;"	p	interface:versionTree
+lastCheck	DTFproject/sendSource/src/store/Devices/state.ts	/^  lastCheck: string;$/;"	p	interface:Device
+lastCheck	DTFproject/src/store/Devices/state.ts	/^  lastCheck: string;$/;"	p	interface:Device
+lastChecked	DTFproject/sendSource/src/store/products/state.ts	/^  lastChecked: checked;$/;"	p	interface:products
+lastChecked	DTFproject/src/store/products/state.ts	/^  lastChecked: checked;$/;"	p	interface:products
+lastDay	DTFproject/sendSource/src/store/products/state.ts	/^  lastDay: number;$/;"	p	interface:checked
+lastDay	DTFproject/src/store/products/state.ts	/^  lastDay: number;$/;"	p	interface:checked
+lastMonth	DTFproject/sendSource/src/store/products/state.ts	/^  lastMonth: number;$/;"	p	interface:checked
+lastMonth	DTFproject/src/store/products/state.ts	/^  lastMonth: number;$/;"	p	interface:checked
+lastUpdate	DTFproject/sendSource/src/store/Devices/state.ts	/^  lastUpdate: string;$/;"	p	interface:Device
+lastUpdate	DTFproject/src/store/Devices/state.ts	/^  lastUpdate: string;$/;"	p	interface:Device
+lastWeek	DTFproject/sendSource/src/store/products/state.ts	/^  lastWeek: number;$/;"	p	interface:checked
+lastWeek	DTFproject/src/store/products/state.ts	/^  lastWeek: number;$/;"	p	interface:checked
+link	DTFproject/sendSource/src/components/models.ts	/^  link: string;$/;"	p	interface:Links
+link	DTFproject/src/components/models.ts	/^  link: string;$/;"	p	interface:Links
+lint	DTFproject/package.json	/^    "lint": "eslint --ext .js,.ts,.vue .\/",$/;"	s	object:scripts
+lint	DTFproject/sendSource/package.json	/^    "lint": "eslint --ext .js,.ts,.vue .\/",$/;"	s	object:scripts
+macAdress	DTFproject/sendSource/src/store/Devices/state.ts	/^  macAdress: string;$/;"	p	interface:Device
+macAdress	DTFproject/src/store/Devices/state.ts	/^  macAdress: string;$/;"	p	interface:Device
+mutation	DTFproject/sendSource/src/store/Devices/mutations.ts	/^const mutation: MutationTree<DevicesStateInterface> = {$/;"	C
+mutation	DTFproject/sendSource/src/store/firmwares/mutations.ts	/^const mutation: MutationTree<FirmwareStateInterface> = {$/;"	C
+mutation	DTFproject/sendSource/src/store/products/mutations.ts	/^const mutation: MutationTree<ProductStateInterface> = {$/;"	C
+mutation	DTFproject/src/store/Devices/mutations.ts	/^const mutation: MutationTree<DevicesStateInterface> = {$/;"	C
+mutation	DTFproject/src/store/firmwares/mutations.ts	/^const mutation: MutationTree<FirmwareStateInterface> = {$/;"	C
+mutation	DTFproject/src/store/products/mutations.ts	/^const mutation: MutationTree<ProductStateInterface> = {$/;"	C
+mutations	DTFproject/sendSource/src/store/Devices/index.ts	/^  mutations,$/;"	C
+mutations	DTFproject/sendSource/src/store/firmwares/index.ts	/^  mutations,$/;"	C
+mutations	DTFproject/sendSource/src/store/products/index.ts	/^  mutations,$/;"	C
+mutations	DTFproject/src/store/Devices/index.ts	/^  mutations,$/;"	C
+mutations	DTFproject/src/store/firmwares/index.ts	/^  mutations,$/;"	C
+mutations	DTFproject/src/store/products/index.ts	/^  mutations,$/;"	C
+name	DTFproject/package.json	/^  "name": "dtfproject",$/;"	s
+name	DTFproject/sendSource/package.json	/^  "name": "dtfproject",$/;"	s
+name	DTFproject/sendSource/src/store/Devices/state.ts	/^  name: string;$/;"	p	interface:Device
+name	DTFproject/sendSource/src/store/products/state.ts	/^  name: string;$/;"	p	interface:products
+name	DTFproject/src/store/Devices/state.ts	/^  name: string;$/;"	p	interface:Device
+name	DTFproject/src/store/products/state.ts	/^  name: string;$/;"	p	interface:products
+node	DTFproject/package.json	/^    "node": ">= 10.18.1",$/;"	s	object:engines
+node	DTFproject/sendSource/package.json	/^    "node": ">= 10.18.1",$/;"	s	object:engines
+npm	DTFproject/package.json	/^    "npm": ">= 6.13.4",$/;"	s	object:engines
+npm	DTFproject/sendSource/package.json	/^    "npm": ">= 6.13.4",$/;"	s	object:engines
+numberInUse	DTFproject/sendSource/src/store/firmwares/state.ts	/^  numberInUse: number;$/;"	p	interface:Firmware
+numberInUse	DTFproject/sendSource/src/store/firmwares/state.ts	/^  numberInUse: number;$/;"	p	interface:versionTree
+numberInUse	DTFproject/src/store/firmwares/state.ts	/^  numberInUse: number;$/;"	p	interface:Firmware
+numberInUse	DTFproject/src/store/firmwares/state.ts	/^  numberInUse: number;$/;"	p	interface:versionTree
+numberOfDevices	DTFproject/sendSource/src/store/products/state.ts	/^  numberOfDevices: number;$/;"	p	interface:products
+numberOfDevices	DTFproject/src/store/products/state.ts	/^  numberOfDevices: number;$/;"	p	interface:products
+parser	DTFproject/.eslintrc.js	/^    parser: '@typescript-eslint\/parser',$/;"	p	class:module.exports.parserOptions
+parser	DTFproject/sendSource/.eslintrc.js	/^    parser: '@typescript-eslint\/parser',$/;"	p	class:module.exports.parserOptions
+parserOptions	DTFproject/.eslintrc.js	/^  parserOptions: {$/;"	c	class:module.exports
+parserOptions	DTFproject/sendSource/.eslintrc.js	/^  parserOptions: {$/;"	c	class:module.exports
+plugins	DTFproject/.postcssrc.js	/^  plugins: [$/;"	p	class:module.exports
+plugins	DTFproject/sendSource/.postcssrc.js	/^  plugins: [$/;"	p	class:module.exports
+presets	DTFproject/babel.config.js	/^  presets: [$/;"	p	class:module.exports
+presets	DTFproject/sendSource/babel.config.js	/^  presets: [$/;"	p	class:module.exports
+private	DTFproject/package.json	/^  "private": true,$/;"	b
+private	DTFproject/sendSource/package.json	/^  "private": true,$/;"	b
+productName	DTFproject/package.json	/^  "productName": "DTFproject",$/;"	s
+productName	DTFproject/sendSource/package.json	/^  "productName": "DTFproject",$/;"	s
+products	DTFproject/sendSource/src/store/products/state.ts	/^  products: products[];$/;"	p	interface:ProductStateInterface
+products	DTFproject/sendSource/src/store/products/state.ts	/^export interface products {$/;"	i
+products	DTFproject/src/store/products/state.ts	/^  products: products[];$/;"	p	interface:ProductStateInterface
+products	DTFproject/src/store/products/state.ts	/^export interface products {$/;"	i
+project	DTFproject/.eslintrc.js	/^    project: resolve(__dirname, '.\/tsconfig.json'),$/;"	p	class:module.exports.parserOptions
+project	DTFproject/sendSource/.eslintrc.js	/^    project: resolve(__dirname, '.\/tsconfig.json'),$/;"	p	class:module.exports.parserOptions
+q-app	DTFproject/sendSource/src/index.template.html	/^    <div id="q-app"><\/div>$/;"	I
+q-app	DTFproject/src/index.template.html	/^    <div id="q-app"><\/div>$/;"	I
+quasar	DTFproject/package.json	/^    "quasar": "^1.0.0",$/;"	s	object:dependencies
+quasar	DTFproject/sendSource/package.json	/^    "quasar": "^1.0.0",$/;"	s	object:dependencies
+recommendations	DTFproject/.vscode/extensions.json	/^  "recommendations": [$/;"	a
+releaseNote	DTFproject/sendSource/src/store/firmwares/state.ts	/^  releaseNote: string;$/;"	p	interface:Firmware
+releaseNote	DTFproject/src/store/firmwares/state.ts	/^  releaseNote: string;$/;"	p	interface:Firmware
+root	DTFproject/.eslintrc.js	/^  root: true,$/;"	p	class:module.exports
+root	DTFproject/sendSource/.eslintrc.js	/^  root: true,$/;"	p	class:module.exports
+routes	DTFproject/sendSource/src/router/routes.ts	/^const routes: RouteConfig[] = [$/;"	C
+routes	DTFproject/src/router/routes.ts	/^const routes: RouteConfig[] = [$/;"	C
+scripts	DTFproject/package.json	/^  "scripts": {$/;"	o
+scripts	DTFproject/sendSource/package.json	/^  "scripts": {$/;"	o
+signed	DTFproject/sendSource/src/store/firmwares/state.ts	/^        signed: false,$/;"	C
+signed	DTFproject/sendSource/src/store/firmwares/state.ts	/^      signed: true,$/;"	C
+signed	DTFproject/sendSource/src/store/firmwares/state.ts	/^  signed: boolean;$/;"	p	interface:Firmware
+signed	DTFproject/src/store/firmwares/state.ts	/^        signed: false,$/;"	C
+signed	DTFproject/src/store/firmwares/state.ts	/^      signed: true,$/;"	C
+signed	DTFproject/src/store/firmwares/state.ts	/^  signed: boolean;$/;"	p	interface:Firmware
+size	DTFproject/sendSource/src/store/firmwares/state.ts	/^        size: 1,$/;"	C
+size	DTFproject/sendSource/src/store/firmwares/state.ts	/^        size: 100,$/;"	C
+size	DTFproject/sendSource/src/store/firmwares/state.ts	/^        size: 11,$/;"	C
+size	DTFproject/sendSource/src/store/firmwares/state.ts	/^        size: 1200,$/;"	C
+size	DTFproject/sendSource/src/store/firmwares/state.ts	/^        size: 18,$/;"	C
+size	DTFproject/sendSource/src/store/firmwares/state.ts	/^      size: 12,$/;"	C
+size	DTFproject/sendSource/src/store/firmwares/state.ts	/^  size: number;$/;"	p	interface:Firmware
+size	DTFproject/src/store/firmwares/state.ts	/^        size: 1,$/;"	C
+size	DTFproject/src/store/firmwares/state.ts	/^        size: 100,$/;"	C
+size	DTFproject/src/store/firmwares/state.ts	/^        size: 11,$/;"	C
+size	DTFproject/src/store/firmwares/state.ts	/^        size: 1200,$/;"	C
+size	DTFproject/src/store/firmwares/state.ts	/^        size: 18,$/;"	C
+size	DTFproject/src/store/firmwares/state.ts	/^      size: 12,$/;"	C
+size	DTFproject/src/store/firmwares/state.ts	/^  size: number;$/;"	p	interface:Firmware
+sourceType	DTFproject/.eslintrc.js	/^    sourceType: 'module' \/\/ Allows for the use of imports$/;"	p	class:module.exports.parserOptions
+sourceType	DTFproject/sendSource/.eslintrc.js	/^    sourceType: 'module' \/\/ Allows for the use of imports$/;"	p	class:module.exports.parserOptions
+state	DTFproject/sendSource/src/store/Devices/index.ts	/^  state$/;"	C
+state	DTFproject/sendSource/src/store/Devices/state.ts	/^const state: DevicesStateInterface = {$/;"	C
+state	DTFproject/sendSource/src/store/firmwares/index.ts	/^  state$/;"	C
+state	DTFproject/sendSource/src/store/firmwares/state.ts	/^const state: FirmwareStateInterface = {$/;"	C
+state	DTFproject/sendSource/src/store/products/index.ts	/^  state$/;"	C
+state	DTFproject/sendSource/src/store/products/state.ts	/^const state: ProductStateInterface = {$/;"	C
+state	DTFproject/src/store/Devices/index.ts	/^  state$/;"	C
+state	DTFproject/src/store/Devices/state.ts	/^const state: DevicesStateInterface = {$/;"	C
+state	DTFproject/src/store/firmwares/index.ts	/^  state$/;"	C
+state	DTFproject/src/store/firmwares/state.ts	/^const state: FirmwareStateInterface = {$/;"	C
+state	DTFproject/src/store/products/index.ts	/^  state$/;"	C
+state	DTFproject/src/store/products/state.ts	/^const state: ProductStateInterface = {$/;"	C
+store	DTFproject/sendSource/src/store/store-flag.d.ts	/^    store: true;$/;"	p	interface:QuasarFeatureFlags
+store	DTFproject/src/store/store-flag.d.ts	/^    store: true;$/;"	p	interface:QuasarFeatureFlags
+test	DTFproject/package.json	/^    "test": "echo \\"No test specified\\" && exit 0"$/;"	s	object:scripts
+test	DTFproject/sendSource/package.json	/^    "test": "echo \\"No test specified\\" && exit 0"$/;"	s	object:scripts
+title	DTFproject/sendSource/src/components/models.ts	/^  title: string;$/;"	p	interface:Links
+title	DTFproject/src/components/models.ts	/^  title: string;$/;"	p	interface:Links
+totalCount	DTFproject/sendSource/src/components/models.ts	/^  totalCount: number;$/;"	p	interface:Meta
+totalCount	DTFproject/src/components/models.ts	/^  totalCount: number;$/;"	p	interface:Meta
+tsconfigRootDir	DTFproject/.eslintrc.js	/^    tsconfigRootDir: __dirname,$/;"	p	class:module.exports.parserOptions
+tsconfigRootDir	DTFproject/sendSource/.eslintrc.js	/^    tsconfigRootDir: __dirname,$/;"	p	class:module.exports.parserOptions
+typescript.tsdk	DTFproject/.vscode/settings.json	/^  "typescript.tsdk": "node_modules\/typescript\/lib",$/;"	s
+unwantedRecommendations	DTFproject/.vscode/extensions.json	/^  "unwantedRecommendations": [$/;"	a
+url	DTFproject/sendSource/src/store/products/state.ts	/^  url: string;$/;"	p	interface:products
+url	DTFproject/src/store/products/state.ts	/^  url: string;$/;"	p	interface:products
+version	DTFproject/package.json	/^  "version": "0.0.1",$/;"	s
+version	DTFproject/sendSource/package.json	/^  "version": "0.0.1",$/;"	s
+version	DTFproject/sendSource/src/store/firmwares/state.ts	/^  version: number;$/;"	p	interface:Firmware
+version	DTFproject/src/store/firmwares/state.ts	/^  version: number;$/;"	p	interface:Firmware
+versionTree	DTFproject/sendSource/src/store/firmwares/state.ts	/^export interface versionTree {$/;"	i
+versionTree	DTFproject/src/store/firmwares/state.ts	/^export interface versionTree {$/;"	i
+vetur.experimental.templateInterpolationService	DTFproject/.vscode/settings.json	/^  "vetur.experimental.templateInterpolationService": true$/;"	b
+vetur.format.enable	DTFproject/.vscode/settings.json	/^  "vetur.format.enable": false,$/;"	b
+vetur.validation.template	DTFproject/.vscode/settings.json	/^  "vetur.validation.template": false,$/;"	b
+vue-chartjs	DTFproject/package.json	/^    "vue-chartjs": "^3.5.0",$/;"	s	object:dependencies
+vue-chartjs	DTFproject/sendSource/package.json	/^    "vue-chartjs": "^3.5.0",$/;"	s	object:dependencies
+vue-class-component	DTFproject/package.json	/^    "vue-class-component": "^7.2.2",$/;"	s	object:dependencies
+vue-class-component	DTFproject/sendSource/package.json	/^    "vue-class-component": "^7.2.2",$/;"	s	object:dependencies
+vue-property-decorator	DTFproject/package.json	/^    "vue-property-decorator": "^8.3.0"$/;"	s	object:dependencies
+vue-property-decorator	DTFproject/sendSource/package.json	/^    "vue-property-decorator": "^8.3.0"$/;"	s	object:dependencies
+yarn	DTFproject/package.json	/^    "yarn": ">= 1.21.1"$/;"	s	object:engines
+yarn	DTFproject/sendSource/package.json	/^    "yarn": ">= 1.21.1"$/;"	s	object:engines

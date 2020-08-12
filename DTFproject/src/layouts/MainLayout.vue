@@ -131,7 +131,7 @@ export default class MainLayout extends Vue {
   products: products[] = this.$store.state.Products.products;
 
   // get data from store for less typing
-  get chosenProduct() {
+  get chosenProduct(): products {
     return this.$store.state.Products.chosenProduct;
   }
 

@@ -12,7 +12,7 @@
           <q-chip
             class="text-h6 q-ma-none"
             outline
-            color="green-14"
+            color="positive"
             icon="verified"
             :label="`v${firmwares[chosenProduct.id].default.version}`"
           />
@@ -70,5 +70,5 @@ export default class Home extends Vue {
 
 <style lang="sass" scoped>
 .firmwareCard
-  border-left: solid 6px $teal-5
+  border-left: solid 6px $positive
 </style>

@@ -169,12 +169,12 @@
         class="row justify-center items-center full-width"
       >
         <div
-          class="col cursor-pointer"
+          class="col-5 cursor-pointer"
           @click="upload = true"
         >
           <sendFile />
         </div>
-        <div class="col-auto text-h2 text-grey-7">
+        <div class="col text-h3 text-weight-light text-grey-7 text-center">
           Please upload a firmware
         </div>
       </div>
@@ -289,7 +289,7 @@ export default class Firmwares extends Vue {
     return this.$store.state.Firmwares[this.chosenProduct.id];
   }
   get firmwaresArray(): Firmware[] {
-    let versionsArray = [];
+    let versionsArray = [] as Firmware[];
     // add the default firmware
     versionsArray[0] = this.chosenFirmwares.default;
     // add all older firmwares in array
@@ -330,7 +330,7 @@ export default class Firmwares extends Vue {
   }
 
   // show firmware modal on row click
-  onRowClick(evt, row) {
+  onRowClick(evt, row: Firmware) {
     this.setModal(row);
   }
 
