@@ -4,23 +4,17 @@
       class="row text-h4 text-grey-6 q-mt-xl"
       :class="$q.screen.lt.md ? 'q-mb-lg' : ''"
     >
-      Dashboard for {{ chosenProduct.name}}
+      Dashboard for {{ chosenProduct.name }}
     </div>
-    <div
-      class="row q-mt-sm"
-      :class="$q.screen.lt.md ? '' : 'q-gutter-lg'"
-    >
+    <div class="row q-mt-sm" :class="$q.screen.lt.md ? '' : 'q-gutter-lg'">
       <!-- device card -->
       <deviceCard
         class="col-12 col-md"
-        :class="$q.screen.lt.md ? 'q-mb-lg': ''"
+        :class="$q.screen.lt.md ? 'q-mb-lg' : ''"
       />
 
       <!-- firmware card, only if firmware exists -->
-      <firmwareCard
-        v-if="chosenFirmware"
-        class="col-12 col-md"
-      />
+      <firmwareCard v-if="chosenFirmware" class="col-12 col-md" />
     </div>
     <!-- timegraph card -->
     <div class="row q-my-lg">
@@ -41,15 +35,15 @@ import { products } from '../store/products/state';
 import { Firmware } from '../store/firmwares/state';
 
 @Component({
-  components: { deviceCard, firmwareCard, timeCard },
+  components: { deviceCard, firmwareCard, timeCard }
 })
 export default class Home extends Vue {
   // computed datas from store
   get chosenProduct(): products {
-    return this.$store.state.Products.chosenProduct;
+    return this.$store.state.Products.chosenProduct as products;
   }
   get chosenFirmware(): Firmware {
-    return this.$store.state.Firmwares[this.chosenProduct.id];
+    return this.$store.state.Firmwares[this.chosenProduct.id] as Firmware;
   }
 }
 </script>

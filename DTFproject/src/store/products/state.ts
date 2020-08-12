@@ -12,12 +12,12 @@ export interface products {
 }
 
 export interface ProductStateInterface {
-  chosenProduct: products;
+  chosenProduct: products | null;
   products: products[];
 }
 
 const state: ProductStateInterface = {
-  chosenProduct: '',
+  chosenProduct: null,
   products: [
     {
       name: 'T800',

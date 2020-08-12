@@ -15,12 +15,10 @@
     <q-dialog v-model="upload">
       <q-card class="q-pt-lg q-px-md q-pb-sm">
         <q-card-section class="row items-center">
-          <q-avatar
-            icon="backup"
-            color="secondary"
-            text-color="white"
-          />
-          <span class="q-ml-sm text-h5 text-grey-7">Please choose a firmware to upload</span>
+          <q-avatar icon="backup" color="secondary" text-color="white" />
+          <span class="q-ml-sm text-h5 text-grey-7"
+            >Please choose a firmware to upload</span
+          >
         </q-card-section>
         <!-- upload file -->
         <q-card-section class="q-px-xl">
@@ -49,16 +47,8 @@
             </template>
           </q-input>
           <!-- make it default or not -->
-          <div
-            v-if="uploadData.versionNumber"
-            class="row items-center q-mt-lg"
-          >
-            <q-icon
-              name="verified"
-              size="sm"
-              color="grey-7"
-              class="q-mr-sm"
-            />
+          <div v-if="uploadData.versionNumber" class="row items-center q-mt-lg">
+            <q-icon name="verified" size="sm" color="grey-7" class="q-mr-sm" />
             <q-checkbox
               class="text-subtitle1 text-grey-8"
               left-label
@@ -68,12 +58,7 @@
           </div>
         </q-card-section>
         <q-card-actions align="right">
-          <q-btn
-            flat
-            label="Cancel"
-            color="primary"
-            v-close-popup
-          />
+          <q-btn flat label="Cancel" color="primary" v-close-popup />
           <!-- upload only if fields filled -->
           <q-btn
             flat
@@ -87,17 +72,18 @@
     </q-dialog>
 
     <!-- part if firmwares exists -->
-    <div
-      v-if="chosenFirmwares"
-      class="full-width"
-    >
+    <div v-if="chosenFirmwares" class="full-width">
       <!-- title of the page  -->
-      <div class="q-my-lg text-h4 text-grey-7 full-width">Firmwares for {{ chosenProduct.name }}</div>
-      <div class="q-my-sm text-h5 full-width text-grey-7">Active firmware<span v-if="usedFirmware.length > 1">s</span></div>
+      <div class="q-my-lg text-h4 text-grey-7 full-width">
+        Firmwares for {{ chosenProduct.name }}
+      </div>
+      <div class="q-my-sm text-h5 full-width text-grey-7">
+        Active firmware<span v-if="usedFirmware.length > 1">s</span>
+      </div>
       <!-- cards for firmwares with numberInUse > 0 -->
       <div
         class="row justify-around full-width"
-        :class="$q.screen.gt.xs ? 'q-col-gutter-md':'q-col-gutter-y-md'"
+        :class="$q.screen.gt.xs ? 'q-col-gutter-md' : 'q-col-gutter-y-md'"
       >
         <div
           class="col-12 col-sm-6 col-md-4 col-lg-3 cursor-pointer"
@@ -111,18 +97,21 @@
           >
             <q-card-section class="row items-center">
               <div class="col text-grey-8">
-                <div class="text-h6"><span class="text-grey-6">Firmware</span> v{{firmware.version}}</div>
-                <div class="text-subtitle2">{{ firmware.numberInUse.toLocaleString('us') }} <span class="text-grey-6">device<span v-if="firmware.numberInUse > 1">s</span> in use</span></div>
+                <div class="text-h6">
+                  <span class="text-grey-6">Firmware</span> v{{
+                    firmware.version
+                  }}
+                </div>
+                <div class="text-subtitle2">
+                  {{ firmware.numberInUse.toLocaleString('us') }}
+                  <span class="text-grey-6"
+                    >device<span v-if="firmware.numberInUse > 1">s</span> in
+                    use</span
+                  >
+                </div>
               </div>
-              <div
-                class="col-auto justify-end"
-                v-if="firmware.default"
-              >
-                <q-icon
-                  name="check"
-                  size="lg"
-                  color="positive"
-                />
+              <div class="col-auto justify-end" v-if="firmware.default">
+                <q-icon name="check" size="lg" color="positive" />
               </div>
             </q-card-section>
             <q-card-section>
@@ -134,11 +123,10 @@
         </div>
       </div>
       <!-- table for unused firmware: numberInUse = 0 -->
-      <div
-        v-if="unusedFirmwares.length !== 0"
-        class="q-mb-lg full-width"
-      >
-        <div class="q-mb-sm q-mt-xl text-h5 full-width text-grey-7">Inactive firmware<span v-if="unusedFirmwares.length > 1">s</span></div>
+      <div v-if="unusedFirmwares.length !== 0" class="q-mb-lg full-width">
+        <div class="q-mb-sm q-mt-xl text-h5 full-width text-grey-7">
+          Inactive firmware<span v-if="unusedFirmwares.length > 1">s</span>
+        </div>
         <q-table
           flat
           title=""
@@ -156,17 +144,14 @@
             slot-scope="props"
             :props="props"
           >
-            {{props.value}}
+            {{ props.value }}
           </q-td>
         </q-table>
       </div>
     </div>
 
     <!-- no firmware available, ask for one -->
-    <div
-      v-else
-      class="row justify-center items-center full-width"
-    >
+    <div v-else class="row justify-center items-center full-width">
       <div
         class="col-12 col-md-5 cursor-pointer q-mb-xl"
         @click="upload = true"
@@ -175,7 +160,7 @@
       </div>
       <div
         class="col-12 col-md text-weight-light text-grey-7 text-center"
-        :class="$q.screen.gt.xs ? 'text-h3':'text-h5'"
+        :class="$q.screen.gt.xs ? 'text-h3' : 'text-h5'"
       >
         Please upload a firmware
       </div>
@@ -185,33 +170,32 @@
     <!-- modal to display detailed firmware view -->
     <q-dialog v-model="openModal">
       <!-- fill card only if modalFirmware not empty -->
-      <q-card
-        v-if="Object.entries(modalFirmware).length !== 0"
-        class="q-px-sm"
-      >
+      <q-card v-if="Object.entries(modalFirmware).length !== 0" class="q-px-sm">
         <q-card-section class="row items-center">
           <div class="col text-grey-8">
-            <div class="text-h6"><span class="text-grey-6">Firmware</span> v{{modalFirmware.version}}</div>
-            <div
-              class="text-subtitle2"
-              v-if="modalFirmware.numberInUse > 0"
-            >{{ modalFirmware.numberInUse.toLocaleString('us') }} <span class="text-grey-6">device<span v-if="modalFirmware.numberInUse > 1">s</span> in use</span></div>
-            <div class="text-subtitle2">
-              <span class="text-grey-6">Created at: </span>{{ modalFirmware.createdAt }}
+            <div class="text-h6">
+              <span class="text-grey-6">Firmware</span> v{{
+                modalFirmware.version
+              }}
+            </div>
+            <div class="text-subtitle2" v-if="modalFirmware.numberInUse > 0">
+              {{ modalFirmware.numberInUse.toLocaleString('us') }}
+              <span class="text-grey-6"
+                >device<span v-if="modalFirmware.numberInUse > 1">s</span> in
+                use</span
+              >
             </div>
             <div class="text-subtitle2">
-              {{ modalFirmware.size.toLocaleString('us') }}<span class="text-grey-6"> kb</span>
+              <span class="text-grey-6">Created at: </span
+              >{{ modalFirmware.createdAt }}
+            </div>
+            <div class="text-subtitle2">
+              {{ modalFirmware.size.toLocaleString('us')
+              }}<span class="text-grey-6"> kb</span>
             </div>
           </div>
-          <div
-            class="col-auto justify-end"
-            v-if="modalFirmware.signed"
-          >
-            <q-icon
-              name="verified"
-              size="xl"
-              color="positive"
-            />
+          <div class="col-auto justify-end" v-if="modalFirmware.signed">
+            <q-icon name="verified" size="xl" color="positive" />
           </div>
         </q-card-section>
         <q-card-section>
@@ -221,12 +205,7 @@
           </div>
         </q-card-section>
         <q-card-actions align="right">
-          <q-btn
-            flat
-            label="close"
-            color="primary"
-            v-close-popup
-          />
+          <q-btn flat label="close" color="primary" v-close-popup />
         </q-card-actions>
       </q-card>
     </q-dialog>
@@ -236,11 +215,11 @@
 <script lang="ts">
 import { Vue, Component, Watch } from 'vue-property-decorator';
 import { products } from '../store/products/state';
-import { Firmware, FirmwareStateInterface } from '../store/firmwares/state';
+import { Firmware, FirmwareObject } from '../store/firmwares/state';
 import sendFile from '../components/svg/sendFile.vue';
 
 @Component({
-  components: { sendFile },
+  components: { sendFile }
 })
 export default class Firmwares extends Vue {
   // detailed firmware dialog
@@ -251,7 +230,7 @@ export default class Firmwares extends Vue {
   uploadData = {
     fileToUpload: null,
     versionNumber: '',
-    default: false,
+    default: false
   };
 
   // columns for qtable
@@ -264,14 +243,14 @@ export default class Firmwares extends Vue {
       field: 'version',
       format: (val: string) => `v${val}`,
       sortable: true,
-      headerClasses: 'bg-grey-2',
+      headerClasses: 'bg-grey-2'
     },
     {
       name: 'releaseNote',
       align: 'left',
       label: 'Release Note',
       field: 'releaseNote',
-      headerClasses: 'bg-grey-2',
+      headerClasses: 'bg-grey-2'
     },
     {
       name: 'createdAt',
@@ -279,15 +258,15 @@ export default class Firmwares extends Vue {
       label: 'Created',
       field: 'createdAt',
       sortable: true,
-      headerClasses: 'bg-grey-2',
-    },
+      headerClasses: 'bg-grey-2'
+    }
   ];
 
   get chosenProduct(): products {
-    return this.$store.state.Products.chosenProduct;
+    return this.$store.state.Products.chosenProduct as products;
   }
-  get chosenFirmwares(): FirmwareStateInterface {
-    return this.$store.state.Firmwares[this.chosenProduct.id];
+  get chosenFirmwares(): FirmwareObject {
+    return this.$store.state.Firmwares[this.chosenProduct.id] as FirmwareObject;
   }
   get firmwaresArray(): Firmware[] {
     let versionsArray = [] as Firmware[];
@@ -305,7 +284,7 @@ export default class Firmwares extends Vue {
   get usedFirmware(): Firmware[] {
     let array: Firmware[] = [];
     // store elements in array
-    this.firmwaresArray.forEach((el) => {
+    this.firmwaresArray.forEach(el => {
       el.numberInUse !== 0 ? array.push(el) : '';
     });
     // sort array from newer to older
@@ -316,7 +295,7 @@ export default class Firmwares extends Vue {
   get unusedFirmwares(): Firmware[] {
     let array: Firmware[] = [];
     // store elements in array
-    this.firmwaresArray.forEach((el) => {
+    this.firmwaresArray.forEach(el => {
       el.numberInUse === 0 ? array.push(el) : '';
     });
     // sort array from newer to older
@@ -331,7 +310,7 @@ export default class Firmwares extends Vue {
   }
 
   // show firmware modal on row click
-  onRowClick(evt, row: Firmware) {
+  onRowClick(evt: Event, row: Firmware) {
     this.setModal(row);
   }
 

@@ -1,19 +1,9 @@
 <template>
   <!-- create layout with choose product in each concerned page -->
   <q-page>
-    <transition
-      enter-active-class="fadeIn"
-      leave-active-class="fadeOut"
-    >
-      <chooseProduct
-        v-if="!chosenProduct"
-        :key="'chooseProduct'"
-      />
-      <div
-        v-else
-        :key="'dashboard'"
-        :class="$q.screen.lt.lg ? 'q-mx-lg':''"
-      >
+    <transition enter-active-class="fadeIn" leave-active-class="fadeOut">
+      <chooseProduct v-if="!chosenProduct" :key="'chooseProduct'" />
+      <div v-else :key="'dashboard'" :class="$q.screen.lt.lg ? 'q-mx-lg' : ''">
         <!-- inject specific pages in this layout -->
         <transition
           enter-active-class="animated fadeIn"
@@ -32,12 +22,12 @@ import chooseProduct from '../components/chooseProduct.vue';
 import { products } from '../store/products/state';
 
 @Component({
-  components: { chooseProduct },
+  components: { chooseProduct }
 })
 export default class Home extends Vue {
   // computed datas from store
   get chosenProduct(): products {
-    return this.$store.state.Products.chosenProduct;
+    return this.$store.state.Products.chosenProduct as products;
   }
 }
 </script>

@@ -1,31 +1,24 @@
 <template>
   <q-page class="pageContainer">
     <!-- page title -->
-    <div
-      class="text-h4 text-grey-6 q-pt-xl"
-      v-if="details"
-    >
-      Devices <span v-if="$q.screen.gt.xs"> associated with </span><span v-else> for </span>{{ chosenProduct.name }}
+    <div class="text-h4 text-grey-6 q-pt-xl" v-if="details">
+      Devices <span v-if="$q.screen.gt.xs"> associated with </span
+      ><span v-else> for </span>{{ chosenProduct.name }}
     </div>
-    <q-card
-      class="q-mt-xl borderColor"
-      v-if="details"
-      bordered
-    >
+    <q-card class="q-mt-xl borderColor" v-if="details" bordered>
       <q-card-section class="row">
         <!-- card title -->
         <div class="col-12 col-sm">
-
           <div class="text-h4 text-grey-7">
-            {{ details.length }} <span class="text-h5 text-grey-6">device<span v-if="details.length > 1">s</span></span>
+            {{ details.length }}
+            <span class="text-h5 text-grey-6"
+              >device<span v-if="details.length > 1">s</span></span
+            >
           </div>
         </div>
         <!-- search input -->
         <div class="col-12 col-sm">
-          <q-input
-            v-model="filter"
-            placeholder="Search"
-          >
+          <q-input v-model="filter" placeholder="Search">
             <template v-slot:append>
               <q-icon name="search" />
             </template>
@@ -56,7 +49,13 @@
     >
       <div
         class="text-weight-light text-grey-7 q-mb-xl"
-        :class="$q.screen.gt.xs ? $q.screen.gt.md ? 'text-h3' : 'text-h4':'text-h5'"
+        :class="
+          $q.screen.gt.xs
+            ? $q.screen.gt.md
+              ? 'text-h3'
+              : 'text-h4'
+            : 'text-h5'
+        "
       >
         Devices requesting firmware updates from this product will display here
       </div>
@@ -71,9 +70,11 @@
 import { Vue, Component } from 'vue-property-decorator';
 // import chooseProduct from '../components/chooseProduct.vue';
 import noDevice from '../components/svg/noDevice.vue';
+import { products } from '../store/products/state';
+import { Device } from '../store/Devices/state';
 
 @Component({
-  components: { noDevice },
+  components: { noDevice }
 })
 export default class Devices extends Vue {
   filter = '';
@@ -85,7 +86,7 @@ export default class Devices extends Vue {
       align: 'left',
       field: 'name',
       sortable: true,
-      headerClasses: 'bg-grey-2',
+      headerClasses: 'bg-grey-2'
     },
     {
       name: 'id',
@@ -95,7 +96,7 @@ export default class Devices extends Vue {
       field: 'macAdress',
       // format: val => `${val}`,
       sortable: true,
-      headerClasses: 'bg-grey-2',
+      headerClasses: 'bg-grey-2'
     },
     {
       name: 'firmware',
@@ -103,7 +104,7 @@ export default class Devices extends Vue {
       label: 'Firmware version',
       field: 'firmware',
       sortable: true,
-      headerClasses: 'bg-grey-2',
+      headerClasses: 'bg-grey-2'
     },
     {
       name: 'lastCheck',
@@ -111,7 +112,7 @@ export default class Devices extends Vue {
       label: 'Last Check-in',
       field: 'lastCheck',
       sortable: true,
-      headerClasses: 'bg-grey-2',
+      headerClasses: 'bg-grey-2'
     },
     {
       name: 'lastUpdate',
@@ -119,14 +120,14 @@ export default class Devices extends Vue {
       label: 'Last update',
       field: 'lastUpdate',
       sortable: true,
-      headerClasses: 'bg-grey-2',
-    },
+      headerClasses: 'bg-grey-2'
+    }
   ];
-  get chosenProduct() {
-    return this.$store.state.Products.chosenProduct;
+  get chosenProduct(): products {
+    return this.$store.state.Products.chosenProduct as products;
   }
-  get details() {
-    return this.$store.state.Devices[this.chosenProduct.id];
+  get details(): Device {
+    return this.$store.state.Devices[this.chosenProduct.id] as Device;
   }
 }
 </script>

@@ -1,20 +1,15 @@
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator';
+import { Component, Mixins, Prop } from 'vue-property-decorator';
 // import mixins for responsive behaviour on data changes
 import { HorizontalBar, mixins } from 'vue-chartjs';
 const { reactiveProp } = mixins;
 
-@Component({
-  extends: HorizontalBar,
-  mixins: [reactiveProp],
-  props: {
-    options: {
-      type: Object,
-      default: null
-    }
-  }
-})
-export default class barChart extends Vue {
+@Component
+export default class barChart extends Mixins(HorizontalBar, reactiveProp) {
+  @Prop({ type: Object, default: null }) readonly options!: Record<
+    string,
+    unknown
+  >;
   // render chart when component mounted
   mounted() {
     this.renderChart(this.chartData, this.options);

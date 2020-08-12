@@ -12,7 +12,7 @@
     <q-card-section class="col text-h5 text-grey-7">
       <q-btn
         flat
-        :size="$q.screen.gt.xs ? 'xl': 'lg'"
+        :size="$q.screen.gt.xs ? 'xl' : 'lg'"
         :label="chosenProduct.url"
         type="a"
         target="_blank"
@@ -21,16 +21,8 @@
       />
     </q-card-section>
     <q-separator inset />
-    <q-card-actions
-      align="center"
-      class="col-auto"
-    >
-      <q-btn
-        class="full-width"
-        flat
-        label="Manage devices"
-        to="/devices"
-      />
+    <q-card-actions align="center" class="col-auto">
+      <q-btn class="full-width" flat label="Manage devices" to="/devices" />
     </q-card-actions>
   </q-card>
 </template>
@@ -43,13 +35,13 @@ import { products } from '../../store/products/state';
   filters: {
     niceNumber(value: number): string {
       return value.toLocaleString('us');
-    },
-  },
+    }
+  }
 })
 export default class deviceCard extends Vue {
   // computed datas from store
   get chosenProduct(): products {
-    return this.$store.state.Products.chosenProduct;
+    return this.$store.state.Products.chosenProduct as products;
   }
 }
 </script>

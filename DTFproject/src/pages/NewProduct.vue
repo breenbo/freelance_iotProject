@@ -9,11 +9,7 @@
           Choose a new name
         </q-card-section>
         <q-card-section>
-          <q-form
-            @submit="onSubmit"
-            @reset="onReset"
-            class="q-gutter-xl"
-          >
+          <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-xl">
             <q-input
               v-model="product.name"
               type="text"
@@ -22,13 +18,7 @@
             />
 
             <div class="row justify-end">
-              <q-btn
-                label="Reset"
-                type="reset"
-                color="primary"
-                flat
-                rounded
-              />
+              <q-btn label="Reset" type="reset" color="primary" flat rounded />
               <q-btn
                 label="Submit"
                 type="submit"
@@ -54,8 +44,8 @@ import svgForm from '../components/svgForm.vue';
 @Component({
   components: {
     addProduct,
-    svgForm,
-  },
+    svgForm
+  }
 })
 export default class NewProduct extends Vue {
   product = {
@@ -66,8 +56,8 @@ export default class NewProduct extends Vue {
     lastChecked: {
       lastDay: 0,
       lastWeek: 0,
-      lastMonth: 0,
-    },
+      lastMonth: 0
+    }
   };
 
   onSubmit() {
@@ -78,7 +68,7 @@ export default class NewProduct extends Vue {
     // set chosenProduct with the new product
     this.$store.commit('Products/setChosenProduct', this.product);
     // go to firmware page
-    this.$router.push('/firmwares');
+    this.$router.push('/firmwares') as unknown;
   }
   onReset() {
     this.product.name = '';

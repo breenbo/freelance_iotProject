@@ -8,17 +8,15 @@ export interface Firmware {
   createdAt: string;
 }
 
-export interface versionTree {
-  label: string;
-  numberInUse: number;
-  children?: versionTree[];
+export interface FirmwareObject {
+  default: Firmware;
+  other: Firmware[];
 }
 
 export interface FirmwareStateInterface {
   [deviceID: string]: {
     default: Firmware;
     other: Firmware[];
-    versions?: versionTree[];
   };
 }
 
@@ -98,75 +96,8 @@ const state: FirmwareStateInterface = {
       signed: true,
       createdAt: '2020/08/07'
     },
-    other: [
-      // { version: '0.1', numberInUse: 2 },
-      // { version: '1.2', numberInUse: 14 }
-    ]
+    other: []
   }
-  // HAL_ID: {
-  //   default: {
-  //     version: 55,
-  //     numberInUse: 10,
-  //     releaseNote:
-  //       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, quidem! Cumque necessitatibus iste minima repellendus modi ipsa, enim iusto deserunt. Nesciunt quod quia necessitatibus eligendi totam facilis perferendis rem accusantium?',
-  //     default: true,
-  //     size: 12,
-  //     signed: true,
-  //     createdAt: '2020/08/07'
-  //   },
-  //   other: [
-  //     {
-  //       version: 0.1,
-  //       numberInUse: 2,
-  //       releaseNote:
-  //         'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, quidem! Cumque necessitatibus iste minima repellendus modi ipsa, enim iusto deserunt. Nesciunt quod quia necessitatibus eligendi totam facilis perferendis rem accusantium?',
-  //       default: false,
-  //       size: 12,
-  //       signed: false,
-  //       createdAt: '2020/08/07'
-  //     },
-  //     {
-  //       version: 2.2,
-  //       numberInUse: 4,
-  //       releaseNote:
-  //         'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, quidem! Cumque necessitatibus iste minima repellendus modi ipsa, enim iusto deserunt. Nesciunt quod quia necessitatibus eligendi totam facilis perferendis rem accusantium?',
-  //       default: false,
-  //       size: 12,
-  //       signed: false,
-  //       createdAt: '2020/08/07'
-  //     },
-  //     {
-  //       version: 5,
-  //       numberInUse: 4,
-  //       releaseNote:
-  //         'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, quidem! Cumque necessitatibus iste minima repellendus modi ipsa, enim iusto deserunt. Nesciunt quod quia necessitatibus eligendi totam facilis perferendis rem accusantium?',
-  //       default: false,
-  //       signed: true,
-  //       size: 12,
-  //       createdAt: '2020/08/07'
-  //     },
-  //     {
-  //       version: 50,
-  //       numberInUse: 9,
-  //       releaseNote:
-  //         'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, quidem! Cumque necessitatibus iste minima repellendus modi ipsa, enim iusto deserunt. Nesciunt quod quia necessitatibus eligendi totam facilis perferendis rem accusantium?',
-  //       default: false,
-  //       size: 12,
-  //       signed: true,
-  //       createdAt: '2020/08/07'
-  //     },
-  //     {
-  //       version: 60,
-  //       numberInUse: 3,
-  //       releaseNote:
-  //         'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias, quidem! Cumque necessitatibus iste minima repellendus modi ipsa, enim iusto deserunt. Nesciunt quod quia necessitatibus eligendi totam facilis perferendis rem accusantium?',
-  //       default: false,
-  //       size: 12,
-  //       signed: false,
-  //       createdAt: '2020/08/17'
-  //     }
-  //   ]
-  // }
 };
 
 export default state;

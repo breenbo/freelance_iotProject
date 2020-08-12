@@ -30,14 +30,14 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import { products } from '../../store/products/state';
-import { Firmware } from '../../store/firmwares/state';
+import { Firmware, FirmwareStateInterface } from '../../store/firmwares/state';
 
 @Component({
   filters: {
     niceNumber(value: number): string {
       return value.toLocaleString('us');
-    },
-  },
+    }
+  }
 })
 export default class versionList extends Vue {
   columns = [
@@ -49,7 +49,7 @@ export default class versionList extends Vue {
       field: 'version',
       format: (val: string) => `v${val}`,
       sortable: true,
-      headerClasses: 'bg-grey-2',
+      headerClasses: 'bg-grey-2'
     },
     {
       name: 'numberInUse',
@@ -57,11 +57,11 @@ export default class versionList extends Vue {
       label: 'Devices in use',
       field: 'numberInUse',
       sortable: true,
-      headerClasses: 'bg-grey-2',
-    },
+      headerClasses: 'bg-grey-2'
+    }
   ];
   get versions(): Firmware[] {
-    let versionsArray: Firmware[] = [];
+    let versionsArray = [] as Firmware[];
     // add the default firmware
     versionsArray[0] = this.firmwares[this.chosenProduct.id].default;
     // add all older firmwares in array
@@ -75,11 +75,11 @@ export default class versionList extends Vue {
   }
   // computed datas from store
   get chosenProduct(): products {
-    return this.$store.state.Products.chosenProduct;
+    return this.$store.state.Products.chosenProduct as products;
   }
 
-  get firmwares(): Firmware {
-    return this.$store.state.Firmwares;
+  get firmwares(): FirmwareStateInterface {
+    return this.$store.state.Firmwares as FirmwareStateInterface;
   }
   // calculate number of binaries : older array length + 1 (default firmware)
   get numberBinary(): number {

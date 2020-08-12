@@ -46,17 +46,10 @@
             outline
             class="q-mr-sm"
           />
-          <q-btn
-            label="logout"
-            flat
-          />
+          <q-btn label="logout" flat />
         </div>
         <div v-else>
-          <q-btn
-            icon="more_vert"
-            @click="profileOpen = true"
-            flat
-          />
+          <q-btn icon="more_vert" @click="profileOpen = true" flat />
         </div>
       </q-toolbar>
     </q-header>
@@ -82,26 +75,14 @@
           />
         </q-card-section>
         <q-card-actions align="right">
-          <q-btn
-            flat
-            label="Cancel"
-            color="primary"
-            v-close-popup
-          />
+          <q-btn flat label="Cancel" color="primary" v-close-popup />
         </q-card-actions>
       </q-card>
     </q-dialog>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      bordered
-      content-class="bg-grey-1"
-    >
+    <q-drawer v-model="leftDrawerOpen" bordered content-class="bg-grey-1">
       <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
+        <q-item-label header class="text-grey-8">
           Navigation
         </q-item-label>
         <EssentialLink
@@ -135,49 +116,49 @@ const linksData: Links[] = [
     title: 'Home',
     caption: 'See your dashboard',
     icon: 'dashboard',
-    link: '/',
+    link: '/'
   },
   {
     title: 'Devices',
     caption: 'Updated devices',
     icon: 'devices',
-    link: 'devices',
+    link: 'devices'
   },
   {
     title: 'Firmwares',
     caption: 'Available firmwares',
     icon: 'system_update_alt',
-    link: 'firmwares',
+    link: 'firmwares'
   },
   {
     title: 'Feedback',
     caption: 'report bug or submit feature request',
     icon: 'feedback',
-    link: 'feedback',
+    link: 'feedback'
   },
   {
     title: 'New product',
     caption: 'Create a new product',
     icon: 'post_add',
-    link: 'newproduct',
-  },
+    link: 'newproduct'
+  }
 ];
 
 import { Vue, Component } from 'vue-property-decorator';
 import { products } from '../store/products/state';
 
 @Component({
-  components: { EssentialLink },
+  components: { EssentialLink }
 })
 export default class MainLayout extends Vue {
   profileOpen = false;
   leftDrawerOpen = false;
   essentialLinks = linksData;
-  products: products[] = this.$store.state.Products.products;
+  products: products[] = this.$store.state.Products.products as products[];
 
   // get data from store for less typing
   get chosenProduct(): products {
-    return this.$store.state.Products.chosenProduct;
+    return this.$store.state.Products.chosenProduct as products;
   }
 
   setChosenProduct(value: products) {

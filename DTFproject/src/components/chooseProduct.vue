@@ -7,14 +7,16 @@
     </div>
     <div
       class="row justify-center text-grey-7 q-my-md q-mb-xl"
-      :class="$q.screen.lt.sm ? 'text-h4': $q.screen.lt.md ? 'text-h3' : 'text-h2'"
+      :class="
+        $q.screen.lt.sm ? 'text-h4' : $q.screen.lt.md ? 'text-h3' : 'text-h2'
+      "
       v-if="!chosenProduct"
     >
       Manage and update your devices with ease
     </div>
     <div
       class="row text-grey q-my-lg"
-      :class="$q.screen.lt.sm ? 'text-h6':'text-h4'"
+      :class="$q.screen.lt.sm ? 'text-h6' : 'text-h4'"
     >
       Please choose a product :
     </div>
@@ -40,20 +42,20 @@ import { products } from '../store/products/state';
 import { Firmware } from '../store/firmwares/state';
 
 @Component({
-  components: { iotSVG },
+  components: { iotSVG }
 })
 export default class chooseProduct extends Vue {
   // set datas from the store for less typing
-  get products() {
-    return this.$store.state.Products.products;
+  get products(): products[] {
+    return this.$store.state.Products.products as products[];
   }
   // computed datas from store
   get chosenProduct(): products {
-    return this.$store.state.Products.chosenProduct;
+    return this.$store.state.Products.chosenProduct as products;
   }
 
   get firmwares(): Firmware {
-    return this.$store.state.Firmwares;
+    return this.$store.state.Firmwares as Firmware;
   }
 
   // store chosen product in the Products store
