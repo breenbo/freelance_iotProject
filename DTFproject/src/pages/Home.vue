@@ -1,14 +1,26 @@
 <template>
   <q-page>
-    <div class="row text-h4 text-grey-6 q-mt-xl">
+    <div
+      class="row text-h4 text-grey-6 q-mt-xl"
+      :class="$q.screen.lt.md ? 'q-mb-lg' : ''"
+    >
       Dashboard for {{ chosenProduct.name}}
     </div>
-    <div class="row q-gutter-lg q-mt-sm">
+    <div
+      class="row q-mt-sm"
+      :class="$q.screen.lt.md ? '' : 'q-gutter-lg'"
+    >
       <!-- device card -->
-      <deviceCard />
+      <deviceCard
+        class="col-12 col-md"
+        :class="$q.screen.lt.md ? 'q-mb-lg': ''"
+      />
 
       <!-- firmware card, only if firmware exists -->
-      <firmwareCard v-if="chosenFirmware" />
+      <firmwareCard
+        v-if="chosenFirmware"
+        class="col-12 col-md"
+      />
     </div>
     <!-- timegraph card -->
     <div class="row q-my-lg">

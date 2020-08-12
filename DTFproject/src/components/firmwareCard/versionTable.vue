@@ -6,8 +6,10 @@
       :data="versions"
       :columns="columns"
       row-key="name"
-      flat
       :hide-pagination="numberBinary < 6"
+      flat
+      :bordered="$q.screen.lt.sm"
+      :grid="$q.screen.lt.sm"
     >
       <template v-slot:body-cell="props">
         <q-td

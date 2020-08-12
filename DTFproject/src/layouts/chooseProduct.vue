@@ -12,6 +12,7 @@
       <div
         v-else
         :key="'dashboard'"
+        :class="$q.screen.lt.lg ? 'q-mx-lg':''"
       >
         <!-- inject specific pages in this layout -->
         <router-view></router-view>

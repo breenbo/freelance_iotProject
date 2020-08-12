@@ -38,23 +38,62 @@
         </q-btn-dropdown>
         <q-space />
 
-        <q-btn
-          icon="account_circle"
-          label="profile"
-          rounded
-          outline
-          class="q-mr-sm"
-        />
-        <q-btn
-          label="logout"
-          flat
-        />
+        <div v-if="$q.screen.gt.xs">
+          <q-btn
+            icon="account_circle"
+            label="profile"
+            rounded
+            outline
+            class="q-mr-sm"
+          />
+          <q-btn
+            label="logout"
+            flat
+          />
+        </div>
+        <div v-else>
+          <q-btn
+            icon="more_vert"
+            @click="profileOpen = true"
+            flat
+          />
+        </div>
       </q-toolbar>
     </q-header>
+    <!-- user modal for small screen -->
+    <q-dialog v-model="profileOpen">
+      <q-card class="profileCard">
+        <q-card-section class="column">
+          <q-btn
+            label="Profile"
+            color="primary"
+            rounded
+            outline
+            class="q-py-sm full-width q-mb-lg"
+            v-close-popup
+          />
+          <q-btn
+            label="Logout"
+            color="primary"
+            rounded
+            outline
+            class="q-py-sm full-width"
+            v-close-popup
+          />
+        </q-card-section>
+        <q-card-actions align="right">
+          <q-btn
+            flat
+            label="Cancel"
+            color="primary"
+            v-close-popup
+          />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
 
     <q-drawer
       v-model="leftDrawerOpen"
-      show-if-above
       bordered
       content-class="bg-grey-1"
     >
@@ -81,7 +120,7 @@
         <router-view />
       </transition>
     </q-page-container>
-    <q-footer>
+    <q-footer reveal>
       <div class="text-center q-my-sm">Footer</div>
     </q-footer>
   </q-layout>
@@ -131,6 +170,7 @@ import { products } from '../store/products/state';
   components: { EssentialLink },
 })
 export default class MainLayout extends Vue {
+  profileOpen = false;
   leftDrawerOpen = false;
   essentialLinks = linksData;
   products: products[] = this.$store.state.Products.products;
@@ -148,11 +188,14 @@ export default class MainLayout extends Vue {
 
 <style lang="sass" scoped>
 .pageContainer
-  max-width: 1600px !important
+  max-width: 1400px !important
   margin: 0 auto
 
 .productSelect
   min-width: 250px !important
+
+.profileCard
+  width: 80%
 
 .fadeOut
   animation-duration: 200ms

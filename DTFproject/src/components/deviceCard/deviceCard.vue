@@ -1,6 +1,6 @@
 <template>
   <!-- devices card -->
-  <q-card class="col deviceCard column">
+  <q-card class="deviceCard column">
     <q-card-section class="col">
       <div class="text-h4 text-grey-7">
         {{ chosenProduct.numberOfDevices | niceNumber }}
@@ -12,19 +12,13 @@
     <q-card-section class="col text-h5 text-grey-7">
       <q-btn
         flat
-        size="xl"
-        icon="link"
+        :size="$q.screen.gt.xs ? 'xl': 'lg'"
         :label="chosenProduct.url"
         type="a"
         target="_blank"
         :href="chosenProduct.url"
         no-caps
       />
-      <!-- <q-icon
-              name="link"
-              class="text-h4"
-            />
-            {{ chosenProduct.url }} -->
     </q-card-section>
     <q-separator inset />
     <q-card-actions

@@ -1,11 +1,11 @@
 <template>
-  <q-card class="col firmwareCard">
+  <q-card class="firmwareCard">
     <q-card-section>
       <div class="row text-h4 text-grey-7">
         <div class="col">
           {{ numberBinary }}
           <span class="text-h5 text-grey-6">
-            firmware<span v-if="numberBinary > 1">s</span> uploaded
+            firmware<span v-if="numberBinary > 1">s</span><span v-if="$q.screen.gt.xs"> uploaded</span>
           </span>
         </div>
         <div class="col-auto text-grey-7">

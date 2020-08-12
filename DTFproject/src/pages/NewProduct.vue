@@ -1,59 +1,60 @@
 <template>
-  <q-page class="row items-center q-px-xl">
-    <div class="row full-width items-center">
-      <div class="col-5">
-        <addProduct />
-      </div>
-      <div class="col-7 q-pl-lg">
-        <q-card class="borderColor">
-          <q-card-section class="text-h3 text-weight-light text-grey-7">
-            Name the new product
-          </q-card-section>
-          <q-card-section>
-            <q-form
-              @submit="onSubmit"
-              @reset="onReset"
-              class="q-gutter-xl"
-            >
-              <q-input
-                v-model="product.name"
-                type="text"
-                label="Produc name"
-                required
-              />
+  <svgForm>
+    <template v-slot:svg>
+      <addProduct />
+    </template>
+    <template v-slot:cardForm>
+      <q-card class="borderColor">
+        <q-card-section class="text-h3 text-weight-light text-grey-7">
+          Choose a new name
+        </q-card-section>
+        <q-card-section>
+          <q-form
+            @submit="onSubmit"
+            @reset="onReset"
+            class="q-gutter-xl"
+          >
+            <q-input
+              v-model="product.name"
+              type="text"
+              label="Product name"
+              required
+            />
 
-              <div class="row justify-end">
-                <q-btn
-                  label="Reset"
-                  type="reset"
-                  color="primary"
-                  flat
-                  rounded
-                />
-                <q-btn
-                  label="Submit"
-                  type="submit"
-                  color="primary"
-                  class="q-ml-sm"
-                  rounded
-                  outline
-                />
-              </div>
-            </q-form>
-          </q-card-section>
-        </q-card>
-      </div>
-    </div>
-  </q-page>
+            <div class="row justify-end">
+              <q-btn
+                label="Reset"
+                type="reset"
+                color="primary"
+                flat
+                rounded
+              />
+              <q-btn
+                label="Submit"
+                type="submit"
+                color="primary"
+                class="q-ml-sm"
+                rounded
+                outline
+              />
+            </div>
+          </q-form>
+        </q-card-section>
+      </q-card>
+    </template>
+  </svgForm>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import addProduct from '../components/svg/addProduct.vue';
+// use template with named slots because same template for both pages
+import svgForm from '../components/svgForm.vue';
 
 @Component({
   components: {
     addProduct,
+    svgForm,
   },
 })
 export default class NewProduct extends Vue {

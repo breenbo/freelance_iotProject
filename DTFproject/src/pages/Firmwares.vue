@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page class="pageContainer">
     <!-- button to upload a firmware -->
     <q-btn
       color="primary"
@@ -95,9 +95,12 @@
       <div class="q-my-lg text-h4 text-grey-7 full-width">Firmwares for {{ chosenProduct.name }}</div>
       <div class="q-my-sm text-h5 full-width text-grey-7">Active firmware<span v-if="usedFirmware.length > 1">s</span></div>
       <!-- cards for firmwares with numberInUse > 0 -->
-      <div class="row q-col-gutter-md justify-around full-width">
+      <div
+        class="row justify-around full-width"
+        :class="$q.screen.gt.xs ? 'q-col-gutter-md':'q-col-gutter-y-md'"
+      >
         <div
-          class="col-4 cursor-pointer"
+          class="col-12 col-sm-6 col-md-4 col-lg-3 cursor-pointer"
           v-for="firmware in usedFirmware"
           :key="firmware.id"
           @click="setModal(firmware)"
@@ -138,13 +141,14 @@
         <div class="q-mb-sm q-mt-xl text-h5 full-width text-grey-7">Inactive firmware<span v-if="unusedFirmwares.length > 1">s</span></div>
         <q-table
           flat
-          bordered
           title=""
           :data="unusedFirmwares"
           :columns="columns"
           row-key="name"
           @row-click="onRowClick"
           :hide-pagination="unusedFirmwares.length < 6"
+          :bordered="$q.screen.lt.sm"
+          :grid="$q.screen.lt.sm"
         >
           <q-td
             class="releaseCol"
@@ -157,17 +161,22 @@
         </q-table>
       </div>
     </div>
+
+    <!-- no firmware available, ask for one -->
     <div
       v-else
       class="row justify-center items-center full-width"
     >
       <div
-        class="col-5 cursor-pointer"
+        class="col-12 col-md-5 cursor-pointer q-mb-xl"
         @click="upload = true"
       >
         <sendFile />
       </div>
-      <div class="col text-h3 text-weight-light text-grey-7 text-center">
+      <div
+        class="col-12 col-md text-weight-light text-grey-7 text-center"
+        :class="$q.screen.gt.xs ? 'text-h3':'text-h5'"
+      >
         Please upload a firmware
       </div>
     </div>
@@ -335,6 +344,9 @@ export default class Firmwares extends Vue {
 </script>
 
 <style lang="sass" scoped>
+.pageContainer
+  max-width: 1400px!important
+
 .windowHeight
   height: 88vh!important
 

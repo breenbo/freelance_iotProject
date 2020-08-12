@@ -1,17 +1,21 @@
 <template>
-  <q-page>
+  <q-page class="q-mx-lg">
     <div class="row justify-center full-height">
-      <div class="col-10 q-my-lg">
+      <div class="col-12 col-md-10 q-my-lg">
         <iotSVG />
       </div>
     </div>
     <div
-      class="row justify-center text-h2 text-grey-7 q-my-md q-mb-xl"
+      class="row justify-center text-grey-7 q-my-md q-mb-xl"
+      :class="$q.screen.lt.sm ? 'text-h4': $q.screen.lt.md ? 'text-h3' : 'text-h2'"
       v-if="!chosenProduct"
     >
       Manage and update your devices with ease
     </div>
-    <div class="row text-h4 text-grey q-my-lg">
+    <div
+      class="row text-grey q-my-lg"
+      :class="$q.screen.lt.sm ? 'text-h6':'text-h4'"
+    >
       Please choose a product :
     </div>
     <div class="row justify-center q-gutter-lg">
