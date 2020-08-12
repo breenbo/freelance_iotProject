@@ -1,6 +1,5 @@
 <template>
   <q-page>
-    <chooseProduct v-if="!chosenProduct" />
     <div>
       <!-- page title -->
       <div
@@ -68,11 +67,11 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import chooseProduct from '../components/chooseProduct.vue';
+// import chooseProduct from '../components/chooseProduct.vue';
 import noDevice from '../components/svg/noDevice.vue';
 
 @Component({
-  components: { chooseProduct, noDevice },
+  components: { noDevice },
 })
 export default class Devices extends Vue {
   filter = '';

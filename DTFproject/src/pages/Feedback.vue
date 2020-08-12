@@ -7,9 +7,11 @@
       <div class="col-7 q-pl-lg">
         <div class="column full-height">
           <div class="text-h3 text-weight-light text-grey-7 q-pb-md">
-            Please leave some feedback
           </div>
           <q-card class="borderColor">
+            <q-card-section class="text-h3 text-weight-light text-grey-7">
+              Please leave some feedback
+            </q-card-section>
             <q-card-section>
               <q-form
                 @submit="onSubmit"
@@ -28,6 +30,7 @@
                   type="textarea"
                   label="Free text"
                   placeholder="Explain with maximum of details your concern"
+                  autogrow
                   class="col"
                 />
                 <div class="row justify-end">

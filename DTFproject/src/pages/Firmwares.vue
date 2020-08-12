@@ -1,184 +1,177 @@
 <template>
   <q-page>
-    <!-- jumbo if no product chosen -->
-    <chooseProduct v-if="!chosenProduct" />
-    <!-- content if product chosen -->
-    <div
-      v-else
-      class="row q-pt-xl"
-    >
-      <!-- button to upload a firmware -->
-      <q-btn
-        color="primary"
-        icon="backup"
-        label="Upload a firmware"
-        class="full-width q-ma-xl q-py-sm"
-        size="xl"
-        rounded
-        outline
-        @click="upload = true"
-      />
-      <!-- modal to upload firmware -->
-      <q-dialog v-model="upload">
-        <q-card class="q-pt-lg q-px-md q-pb-sm">
-          <q-card-section class="row items-center">
-            <q-avatar
-              icon="backup"
-              color="secondary"
-              text-color="white"
-            />
-            <span class="q-ml-sm text-h5 text-grey-7">Please choose a firmware to upload</span>
-          </q-card-section>
-          <!-- upload file -->
-          <q-card-section class="q-px-xl">
-            <q-file
-              v-model="uploadData.fileToUpload"
-              counter
-              clearable
-              label="File upload"
-            >
-              <template v-slot:prepend>
-                <q-icon name="attach_file" />
-              </template>
-            </q-file>
-            <!-- enter version number -->
-            <q-input
-              v-if="uploadData.fileToUpload"
-              v-model="uploadData.versionNumber"
-              clearable
-              required
-              type="text"
-              label="Version number"
-              placeholder="please enter a version number"
-            >
-              <template v-slot:prepend>
-                <q-icon name="device_unknown" />
-              </template>
-            </q-input>
-            <!-- make it default or not -->
-            <div
-              v-if="uploadData.versionNumber"
-              class="row items-center q-mt-lg"
-            >
-              <q-icon
-                name="verified"
-                size="sm"
-                color="grey-7"
-                class="q-mr-sm"
-              />
-              <q-checkbox
-                class="text-subtitle1 text-grey-8"
-                left-label
-                v-model="uploadData.default"
-                label="Default firmware"
-              />
-            </div>
-          </q-card-section>
-          <q-card-actions align="right">
-            <q-btn
-              flat
-              label="Cancel"
-              color="primary"
-              v-close-popup
-            />
-            <!-- upload only if fields filled -->
-            <q-btn
-              flat
-              label="upload"
-              color="primary"
-              :disable="uploadData.versionNumber ? false : true"
-              v-close-popup
-            />
-          </q-card-actions>
-        </q-card>
-      </q-dialog>
-
-      <!-- part if firmwares exists -->
-      <div
-        v-if="chosenFirmwares"
-        class="full-width"
-      >
-        <!-- title of the page  -->
-        <div class="q-my-lg text-h4 text-grey-7 full-width">Firmwares for {{ chosenProduct.name }}</div>
-        <div class="q-my-sm text-h5 full-width text-grey-7">Active firmwares</div>
-        <!-- cards for firmwares with numberInUse > 0 -->
-        <div class="row q-col-gutter-md justify-around full-width">
+    <!-- button to upload a firmware -->
+    <q-btn
+      color="primary"
+      icon="backup"
+      label="Upload a firmware"
+      class="full-width q-ma-xl q-py-sm"
+      size="xl"
+      rounded
+      outline
+      @click="upload = true"
+    />
+    <!-- modal to upload firmware -->
+    <q-dialog v-model="upload">
+      <q-card class="q-pt-lg q-px-md q-pb-sm">
+        <q-card-section class="row items-center">
+          <q-avatar
+            icon="backup"
+            color="secondary"
+            text-color="white"
+          />
+          <span class="q-ml-sm text-h5 text-grey-7">Please choose a firmware to upload</span>
+        </q-card-section>
+        <!-- upload file -->
+        <q-card-section class="q-px-xl">
+          <q-file
+            v-model="uploadData.fileToUpload"
+            counter
+            clearable
+            label="File upload"
+          >
+            <template v-slot:prepend>
+              <q-icon name="attach_file" />
+            </template>
+          </q-file>
+          <!-- enter version number -->
+          <q-input
+            v-if="uploadData.fileToUpload"
+            v-model="uploadData.versionNumber"
+            clearable
+            required
+            type="text"
+            label="Version number"
+            placeholder="please enter a version number"
+          >
+            <template v-slot:prepend>
+              <q-icon name="device_unknown" />
+            </template>
+          </q-input>
+          <!-- make it default or not -->
           <div
-            class="col-4 cursor-pointer"
-            v-for="firmware in usedFirmware"
-            :key="firmware.id"
-            @click="setModal(firmware)"
+            v-if="uploadData.versionNumber"
+            class="row items-center q-mt-lg"
           >
-            <q-card
-              :class="firmware.default ? 'borderColor' : ''"
-              class="hoverShadow"
-            >
-              <q-card-section class="row items-center">
-                <div class="col text-grey-8">
-                  <div class="text-h6"><span class="text-grey-6">Firmware</span> v{{firmware.version}}</div>
-                  <div class="text-subtitle2">{{ firmware.numberInUse.toLocaleString('us') }} <span class="text-grey-6">device<span v-if="firmware.numberInUse > 1">s</span> in use</span></div>
-                </div>
-                <div
-                  class="col-auto justify-end"
-                  v-if="firmware.default"
-                >
-                  <q-icon
-                    name="check"
-                    size="lg"
-                    color="positive"
-                  />
-                </div>
-              </q-card-section>
-              <q-card-section>
-                <div class="ellipsis">
-                  {{ firmware.releaseNote }}
-                </div>
-              </q-card-section>
-            </q-card>
+            <q-icon
+              name="verified"
+              size="sm"
+              color="grey-7"
+              class="q-mr-sm"
+            />
+            <q-checkbox
+              class="text-subtitle1 text-grey-8"
+              left-label
+              v-model="uploadData.default"
+              label="Default firmware"
+            />
           </div>
-        </div>
-        <!-- table for unused firmware: numberInUse = 0 -->
-        <div
-          v-if="unusedFirmwares.length !== 0"
-          class="q-mb-lg full-width"
-        >
-          <div class="q-mb-sm q-mt-xl text-h5 full-width text-grey-7">Inactive firmwares</div>
-          <q-table
+        </q-card-section>
+        <q-card-actions align="right">
+          <q-btn
             flat
-            bordered
-            title=""
-            :data="unusedFirmwares"
-            :columns="columns"
-            row-key="name"
-            @row-click="onRowClick"
-            :hide-pagination="unusedFirmwares.length < 6"
+            label="Cancel"
+            color="primary"
+            v-close-popup
+          />
+          <!-- upload only if fields filled -->
+          <q-btn
+            flat
+            label="upload"
+            color="primary"
+            :disable="uploadData.versionNumber ? false : true"
+            v-close-popup
+          />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+
+    <!-- part if firmwares exists -->
+    <div
+      v-if="chosenFirmwares"
+      class="full-width"
+    >
+      <!-- title of the page  -->
+      <div class="q-my-lg text-h4 text-grey-7 full-width">Firmwares for {{ chosenProduct.name }}</div>
+      <div class="q-my-sm text-h5 full-width text-grey-7">Active firmware<span v-if="usedFirmware.length > 1">s</span></div>
+      <!-- cards for firmwares with numberInUse > 0 -->
+      <div class="row q-col-gutter-md justify-around full-width">
+        <div
+          class="col-4 cursor-pointer"
+          v-for="firmware in usedFirmware"
+          :key="firmware.id"
+          @click="setModal(firmware)"
+        >
+          <q-card
+            :class="firmware.default ? 'borderColor' : ''"
+            class="hoverShadow"
           >
-            <q-td
-              class="releaseCol"
-              slot="body-cell-releaseNote"
-              slot-scope="props"
-              :props="props"
-            >
-              {{props.value}}
-            </q-td>
-          </q-table>
+            <q-card-section class="row items-center">
+              <div class="col text-grey-8">
+                <div class="text-h6"><span class="text-grey-6">Firmware</span> v{{firmware.version}}</div>
+                <div class="text-subtitle2">{{ firmware.numberInUse.toLocaleString('us') }} <span class="text-grey-6">device<span v-if="firmware.numberInUse > 1">s</span> in use</span></div>
+              </div>
+              <div
+                class="col-auto justify-end"
+                v-if="firmware.default"
+              >
+                <q-icon
+                  name="check"
+                  size="lg"
+                  color="positive"
+                />
+              </div>
+            </q-card-section>
+            <q-card-section>
+              <div class="ellipsis">
+                {{ firmware.releaseNote }}
+              </div>
+            </q-card-section>
+          </q-card>
         </div>
       </div>
+      <!-- table for unused firmware: numberInUse = 0 -->
       <div
-        v-else
-        class="row justify-center items-center full-width"
+        v-if="unusedFirmwares.length !== 0"
+        class="q-mb-lg full-width"
       >
-        <div
-          class="col-5 cursor-pointer"
-          @click="upload = true"
+        <div class="q-mb-sm q-mt-xl text-h5 full-width text-grey-7">Inactive firmware<span v-if="unusedFirmwares.length > 1">s</span></div>
+        <q-table
+          flat
+          bordered
+          title=""
+          :data="unusedFirmwares"
+          :columns="columns"
+          row-key="name"
+          @row-click="onRowClick"
+          :hide-pagination="unusedFirmwares.length < 6"
         >
-          <sendFile />
-        </div>
-        <div class="col text-h3 text-weight-light text-grey-7 text-center">
-          Please upload a firmware
-        </div>
+          <q-td
+            class="releaseCol"
+            slot="body-cell-releaseNote"
+            slot-scope="props"
+            :props="props"
+          >
+            {{props.value}}
+          </q-td>
+        </q-table>
       </div>
     </div>
+    <div
+      v-else
+      class="row justify-center items-center full-width"
+    >
+      <div
+        class="col-5 cursor-pointer"
+        @click="upload = true"
+      >
+        <sendFile />
+      </div>
+      <div class="col text-h3 text-weight-light text-grey-7 text-center">
+        Please upload a firmware
+      </div>
+    </div>
+    <!-- </div> -->
 
     <!-- modal to display detailed firmware view -->
     <q-dialog v-model="openModal">
@@ -198,7 +191,7 @@
               <span class="text-grey-6">Created at: </span>{{ modalFirmware.createdAt }}
             </div>
             <div class="text-subtitle2">
-              {{ modalFirmware.size }}<span class="text-grey-6"> kb</span>
+              {{ modalFirmware.size.toLocaleString('us') }}<span class="text-grey-6"> kb</span>
             </div>
           </div>
           <div
@@ -233,13 +226,12 @@
 
 <script lang="ts">
 import { Vue, Component, Watch } from 'vue-property-decorator';
-import chooseProduct from '../components/chooseProduct.vue';
 import { products } from '../store/products/state';
 import { Firmware, FirmwareStateInterface } from '../store/firmwares/state';
 import sendFile from '../components/svg/sendFile.vue';
 
 @Component({
-  components: { chooseProduct, sendFile },
+  components: { sendFile },
 })
 export default class Firmwares extends Vue {
   // detailed firmware dialog

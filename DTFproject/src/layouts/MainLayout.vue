@@ -74,7 +74,12 @@
     </q-drawer>
 
     <q-page-container class="q-mx-xl pageContainer">
-      <router-view />
+      <transition
+        enter-active-class="animated fadeInDown"
+        leave-active-class="animated fadeOut"
+      >
+        <router-view />
+      </transition>
     </q-page-container>
     <q-footer>
       <div class="text-center q-my-sm">Footer</div>
@@ -148,4 +153,11 @@ export default class MainLayout extends Vue {
 
 .productSelect
   min-width: 250px !important
+
+.fadeOut
+  animation-duration: 200ms
+
+.fadeInDown
+  animation-delay: 200ms
+  animation-duration: 500ms
 </style>

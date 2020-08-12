@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="row justify-center">
+  <q-page>
+    <div class="row justify-center full-height">
       <div class="col-10 q-my-lg">
         <iotSVG />
       </div>
@@ -26,7 +26,7 @@
         :outline="chosenProduct !== product"
       />
     </div>
-  </div>
+  </q-page>
 </template>
 
 <script lang="ts">
