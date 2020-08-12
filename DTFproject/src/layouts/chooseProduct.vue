@@ -15,7 +15,12 @@
         :class="$q.screen.lt.lg ? 'q-mx-lg':''"
       >
         <!-- inject specific pages in this layout -->
-        <router-view></router-view>
+        <transition
+          enter-active-class="animated fadeIn"
+          leave-active-class="animated fadeOut"
+        >
+          <router-view :key="chosenProduct.id"></router-view>
+        </transition>
       </div>
     </transition>
   </q-page>
@@ -24,11 +29,7 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import chooseProduct from '../components/chooseProduct.vue';
-// import deviceCard from '../components/deviceCard/deviceCard.vue';
-// import firmwareCard from '../components/firmwareCard/firmwareCard.vue';
-// import timeCard from '../components/timeCard/timeCard.vue';
 import { products } from '../store/products/state';
-import { Firmware } from '../store/firmwares/state';
 
 @Component({
   components: { chooseProduct },
@@ -38,9 +39,6 @@ export default class Home extends Vue {
   get chosenProduct(): products {
     return this.$store.state.Products.chosenProduct;
   }
-  // get chosenFirmware(): Firmware {
-  //   return this.$store.state.Firmwares[this.chosenProduct.id];
-  // }
 }
 </script>
 
